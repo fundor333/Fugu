@@ -1,3 +1,35 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="{{ .Site.Params.favicon }}" type="image/x-icon" />
+<link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-icon" />
+
+<script src="https://kit.fontawesome.com/2f3b6e2e4c.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Nothing+You+Could+Do&family=Special+Elite&display=swap" rel="stylesheet">
+
+<title>
+  {{ .Title | default .Site.Title }} {{ if not .IsHome }} - {{ .Site.Title }}{{ end }}
+</title>
+<meta name="author" content="Fundor333" />
+
+{{ if or (eq .Kind "home") (eq .Kind "page")}} {{ if isset .Params "canonical" }}
+<link rel="canonical" href="{{ .Params.Canonical}}" />
+{{ else }}
+<link rel="canonical" href="{{ .Permalink}}" />
+{{ end }} {{ end }}
+
+{{ range .AlternativeOutputFormats -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+<!-- layouts/partials/head.html -->
+{{ template "_internal/opengraph.html" . }}
+{{ template  "_internal/google_news.html" . }}
+{{ template "_internal/schema.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+
+{{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
+
 {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
 {{ if .Site.IsServer }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}">

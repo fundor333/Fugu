@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html class="text-black dark:text-white bg-white dark:bg-black">
+<html class="text-black dark:text-white bg-white dark:bg-black font-text">
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div id="content">
+        <div id="content" class="p-5">
+          <hr class="px-5 py-5 ">
         {{- block "main" . }}{{- end }}
         </div>
+        <div id="content" class="p-5">
+        <hr class="px-5 py-10">
         {{- partial "footer.html" . -}}
+      </div>
     </body>
 </html>
