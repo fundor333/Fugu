@@ -1,7 +1,7 @@
 <header class="w-full pt-5">
   <div class="flex justify-items-center items-center justify-center px-5 bg-blue-200">
     <a href="{{ .Site.BaseURL }}" class="px-3 flex leading-normal mt-0 mb-2">
-      <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" width="60" >
+      <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" width="60">
       <h1 class="text-4xl font-title p-3">{{ .Site.Title }}</h1>
     </a>
     <div class="md:hidden">
@@ -12,13 +12,24 @@
     </div>
   </div>
 
-  <div class="justify-items-center bg-blue-200">
-    <div class="items-center justify-center md:flex w-full md:w-auto text-right">
+  <div class="flex flex-wrap justify-center content-center">
+    <div class="md:items-center md:justify-center toggle hidden md:flex md:w-auto">
       {{ $currentPage := . }} {{ range .Site.Data.menu }}
-      <a href="{{ .url }}" class="block md:inline-block  px-3 py-3 border-b-2  md:border-none">{{.name}}</a>
+      <a href="{{ .url }}" class="block md:inline-block px-3 py-3 border-b-2  md:border-none">{{.name}}</a>
       {{ end }}
     </div>
+  </div>
 
+  <div class="justify-items-center bg-blue-200">
+    <div class="items-center justify-center flex text-right">
+      {{ $currentPage := . }}
+      {{ range .Site.Data.social }}
+      <a href="{{ .url }}" class="inline-block font-title px-3 py-3 border-b-2 border-none">
+        <i class="fab fa-{{ .identifier }}" aria-hidden="true">
+        </i>
+      </a>
+      {{ end }}
+    </div>
   </div>
 
 </header>
@@ -31,4 +42,5 @@
       navToggle.item(i).classList.toggle("hidden");
     }
   };
+
 </script>
