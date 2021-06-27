@@ -1,5 +1,5 @@
 <header class="w-full pt-5">
-  <div class="flex justify-items-center items-center justify-center px-5 bg-blue-200">
+  <div class="flex justify-items-center items-center justify-center px-5">
     <a href="{{ .Site.BaseURL }}" class="px-3 flex leading-normal mt-0 mb-2">
       <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" width="60">
       <h1 class="text-4xl font-title p-3">{{ .Site.Title }}</h1>
@@ -31,9 +31,7 @@
       {{ end }}
     </div>
   </div>
-
 </header>
-
 
 <script>
   document.getElementById("hamburger").onclick = function toggleMenu() {
