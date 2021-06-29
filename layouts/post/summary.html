@@ -33,7 +33,8 @@
     <p>
       <small>
         {{ with .Params.tags }} {{ range sort . }}
-        <a class="tag font-title" href='{{ "tags" | absURL }}/{{ . | urlize }}'><i class="fas fa-tags"></i> {{ . }}</a>
+        <a class="tag font-title" href='{{ "tags" | absURL }}/{{ . | urlize }}'><button><i class="fas fa-tags"></i> {{ .
+            }}</button></a>
         {{ end }} {{ end }}
       </small>
     </p>

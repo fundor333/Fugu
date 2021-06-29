@@ -1,8 +1,10 @@
 <header class="w-full pt-5">
-  <div class="flex justify-items-center items-center justify-center px-5">
-    <a href="{{ .Site.BaseURL }}" class="px-3 flex leading-normal mt-0 mb-2">
-      <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" width="60">
-      <h1 class="text-4xl font-title p-3">{{ .Site.Title }}</h1>
+  <div class="flex flex-row justify-items-center items-center justify-center px-5">
+    <a href="{{ .Site.BaseURL }}">
+      <button class="flex flex-row px-3 leading-normal mt-0 mb-2">
+        <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" width="60">
+        <h1 class="hidden md:flex md:w-auto text-4xl font-title p-3">{{ .Site.Title }}</h1>
+      </button>
     </a>
     <div class="md:hidden">
       <button id="hamburger">
@@ -15,7 +17,8 @@
   <div class="flex flex-wrap justify-center content-center">
     <div class="md:items-center md:justify-center toggle hidden md:flex md:w-auto">
       {{ $currentPage := . }} {{ range .Site.Data.menu }}
-      <a href="{{ .url }}" class="block md:inline-block px-3 py-3 border-b-2  md:border-none">{{.name}}</a>
+      <a href="{{ .url }}" class="block md:inline-block">
+        <button>{{.name}}</button></a>
       {{ end }}
     </div>
   </div>
@@ -24,9 +27,11 @@
     <div class="items-center justify-center flex text-right">
       {{ $currentPage := . }}
       {{ range .Site.Data.social }}
-      <a href="{{ .url }}" class="inline-block social font-title px-3 py-3 border-b-2 border-none">
-        <i class="fab fa-{{ .identifier }}" aria-hidden="true">
-        </i>
+      <a href="{{ .url }}" class="inline-block social font-title">
+        <button>
+          <i class="fab fa-{{ .identifier }}" aria-hidden="true">
+          </i>
+        </button>
       </a>
       {{ end }}
     </div>

@@ -16,8 +16,8 @@
 		@apply text-lg font-title;
 	}
 
-	a {
-		@apply hover:text-red font-title;
+	button {
+		@apply rounded-lg m-2 p-4 font-text dark:hover:text-black hover:text-white dark:hover:bg-white hover:bg-black dark:bg-black  bg-white;
 	}
 
 	.social {
@@ -37,4 +37,5 @@
 			@apply items-center justify-center 
 		}
 	}
+		
 }
