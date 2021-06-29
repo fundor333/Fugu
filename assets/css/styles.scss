@@ -2,18 +2,26 @@
 @import "node_modules/tailwindcss/components.css";
 @import "node_modules/tailwindcss/utilities.css";
 
-
 @layer base {
 	h1 {
 		@apply text-2xl font-title;
+		margin-bottom: .5rem;
+		font-weight: 500;
+		line-height: 1.2;
 	}
 
 	h2 {
 		@apply text-xl font-title;
+		margin-bottom: .5rem;
+		font-weight: 500;
+		line-height: 1.2;
 	}
 
 	h3 {
 		@apply text-lg font-title;
+		margin-bottom: .5rem;
+		font-weight: 500;
+		line-height: 1.2;
 	}
 
 	button {
@@ -25,7 +33,7 @@
 	}
 
 	body  {
-		@apply text-black dark:text-white bg-white dark:bg-black font-text
+		@apply text-black dark:text-white bg-white dark:bg-black font-text text-base font-normal leading-normal
 	}
 
 	img{
@@ -34,8 +42,23 @@
 
 	article{
 		img{
-			@apply items-center justify-center 
-		}
+			margin-left: auto !important;
+			margin-right: auto !important;
+			display: block !important;
+			max-width: 100%;
+			height: auto;
+				}
+	p{
+		@apply leading-relaxed
 	}
-		
+	}
+
+	ol{
+		@apply list-disc mt-4
+	}
+
+	p, code, .highlight{ 
+		@apply mb-4
+	}
+
 }

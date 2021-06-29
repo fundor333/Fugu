@@ -27,9 +27,22 @@ module.exports = {
 			pdf: "#ff9aa2",
 			wordpress: "#78A2CC"
 		},
+		fontSize: {
+			'xs': '.75rem',
+			'sm': '.875rem',
+			'base': '1rem',
+			'lg': '1.5rem',
+			'xl': '2rem',
+			'2xl': '2.5rem',
+			'3xl': '3rem',
+			'4xl': '3.5rem',
+			'5xl': '4rem',
+			'6xl': '5rem',
+			'7xl': '6rem',
+		},
 		fontFamily: {
-			title: ['Eagle Lake', 'serif'],
-			text: ['Special Elite', 'cursive'],
+			title: ['Menlo Regular, sans-serif'],
+			text: ['Menlo Regular, sans-serif'],
 		},
 		extend: {}
 	},

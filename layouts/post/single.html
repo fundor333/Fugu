@@ -1,0 +1,52 @@
+{{ define "main"}}
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  <br class="p-5">
+  <a class="crumb" href="{{ .Site.BaseURL }}">home</a>
+  ~
+  <a class="crumb" href='{{ .Permalink }}'>{{ .Title }}</a>
+  <br>
+  <hr>
+<br>
+  <div>
+    {{ if .Params.feature_image }}
+    {{ $image := .Resources.GetMatch ( print .Params.feature_image ) }}
+    <img src="{{  $image.Permalink  }}" alt="Card image cap">
+    {{end}}
+    </a>
+    <div>
+      <a href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>
+    </div>
+  </div>
+  {{ with .Params.tags }} {{ range sort . }}
+  <a class="tag" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+    <button
+            class="bg-{{.}} hover:text-{{.}} dark:text-{{.}} dark:bg-black dark:hover:text-black dark:hover:bg-{{.}}">
+    <i class="fas fa-tags"></i> {{ . }}
+  </button>
+  </a>
+  {{ end }} {{ end }}
+
+  <hr>
+
+  <br>
+  <article class="flex flex-col">
+    {{ .Content | safeHTML }}
+      <p>by {{ .Site.Author.name }}</p>
+  </article>
+
+  <hr>
+
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ with $related }}
+  <br>
+  <h3>See Also</h3>
+  {{ range . }}
+  {{ .Render "summary" }}
+  {{ end }}
+  {{ end }}
+
+  {{ template "_internal/disqus.html" . }}
+  <hr>
+</div>
+{{ end }}
