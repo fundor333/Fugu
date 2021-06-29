@@ -6,11 +6,10 @@
   <button
     class="bg-{{.Title}} hover:text-{{.Title}} dark:text-{{.Title}} dark:bg-black dark:hover:text-black dark:hover:bg-{{.Title}}">
     <i class="fas fa-tags"></i> {{ .Title}}
-  </button>
-</a>
+  </button></a>
 {{ end }}
 
-{{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
+{{ $paginator := .Paginate .Data.Pages }}
 {{ range $paginator.Pages }}
 
 {{ .Render "summary" }}

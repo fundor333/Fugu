@@ -8,7 +8,7 @@ module.exports = {
 			rant: "#97a2ff",
 			api: "#ffb5e8",
 			coding: "#bffcc6",
-			dotfiles: "#85e3ff",
+			git: "#85e3ff",
 			python: "#aff8db",
 			socket: "#E7FFAC",
 			data: "#fff5ba",
@@ -22,7 +22,7 @@ module.exports = {
 			docker: '#c6ff8d',
 			hugo: '#8dffe1',
 			blog: '#ff8df2',
-			git: '#d9ff8d',
+			dotfiles: '#d9ff8d',
 			reportlab: "#f3ffe3",
 			pdf: "#ff9aa2",
 			wordpress: "#78A2CC"
