@@ -1,0 +1,41 @@
+<hr class="my-5">
+
+<div class="col-start-2 col-span-10">
+  <article class=" flex flex-col items-center">
+    <a href="{{ .Permalink }}">
+      <h2 class="text-center">{{ .Title }}</h2>
+    </a>
+
+    {{ if .Params.feature_image }}
+    <a href="{{ .Permalink }}">
+
+      {{ $image := .Resources.GetMatch ( print .Params.feature_image ) }}
+      {{ $resource := $image}}
+      {{ $image := $image.Resize "600x q10" }}
+      {{ $image = $image.Filter ((images.Pixelate 8) ) ((images.Pixelate 8)) (images.GaussianBlur 80 ) }}
+
+      {{ $image = $image.Filter (images.GaussianBlur 20 ) }}
+
+      <img data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}" alt="{{ $.Title }}" class="lazy">
+    </a>
+    {{ end }}
+
+    <a href="{{ .Permalink }}" class="p-5">{{ .Description }}</a>
+    <p class="pt-3">
+      <small class=""><i class="fas fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fas fa-mug-tea"></i>{{ if gt
+        .ReadingTime
+        7 }}<i class="fas fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fas fa-mug-tea"></i>{{ end }}{{ end }}{{
+        end }}
+        Reading time {{.ReadingTime}} minutes
+      </small>
+    </p>
+
+    <p>
+      <small>
+        {{ with .Params.tags }} {{ range sort . }}
+        <a class="tag font-title" href='{{ "tags" | absURL }}/{{ . | urlize }}'><i class="fas fa-tags"></i> {{ . }}</a>
+        {{ end }} {{ end }}
+      </small>
+    </p>
+  </article>
+</div>

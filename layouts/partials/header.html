@@ -24,7 +24,7 @@
     <div class="items-center justify-center flex text-right">
       {{ $currentPage := . }}
       {{ range .Site.Data.social }}
-      <a href="{{ .url }}" class="inline-block font-title px-3 py-3 border-b-2 border-none">
+      <a href="{{ .url }}" class="inline-block social font-title px-3 py-3 border-b-2 border-none">
         <i class="fab fa-{{ .identifier }}" aria-hidden="true">
         </i>
       </a>

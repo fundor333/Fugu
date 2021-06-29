@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html class="text-black dark:text-white bg-white dark:bg-black font-text">
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content" class="p-5">
-          <hr class="px-5 py-5 ">
-        {{- block "main" . }}{{- end }}
-        </div>
-        <div id="content" class="p-5">
-        <hr class="px-5 py-10">
-        {{- partial "footer.html" . -}}
-      </div>
-    </body>
+<html>
+{{- partial "head.html" . -}}
+
+<body>
+  {{- partial "header.html" . -}}
+
+  <div class="grid grid-cols-6 gap-4">
+    <div id="content" class="col-start-2 col-span-4">
+      <hr class="px-5 py-5">
+      {{- block "main" . }}{{- end }}
+    </div>
+    <div id="content" class="col-start-2 col-span-4">
+      <hr class="px-5 py-10">
+    </div>
+  </div>
+  {{- partial "footer.html" . -}}
+
+</body>
+
 </html>

@@ -1,3 +1,40 @@
 @import "node_modules/tailwindcss/base.css";
 @import "node_modules/tailwindcss/components.css";
 @import "node_modules/tailwindcss/utilities.css";
+
+
+@layer base {
+	h1 {
+		@apply text-2xl font-title;
+	}
+
+	h2 {
+		@apply text-xl font-title;
+	}
+
+	h3 {
+		@apply text-lg font-title;
+	}
+
+	a {
+		@apply hover:text-red font-title;
+	}
+
+	.social {
+		@apply hover:text-black dark:hover:text-white
+	}
+
+	body  {
+		@apply text-black dark:text-white bg-white dark:bg-black font-text
+	}
+
+	img{
+		@apply rounded-lg
+	}
+
+	article{
+		img{
+			@apply items-center justify-center 
+		}
+	}
+}
