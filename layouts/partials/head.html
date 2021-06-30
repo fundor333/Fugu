@@ -13,6 +13,10 @@
 </title>
 <meta name="author" content="Fundor333" />
 
+{{ $options := (dict "outputStyle" "compressed") }}
+{{ $style := resources.Get "css/style.scss" | resources.ToCSS $options | postCSS}}
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
+
 {{ if or (eq .Kind "home") (eq .Kind "page")}} {{ if isset .Params "canonical" }}
 <link rel="canonical" href="{{ .Params.Canonical}}" />
 {{ else }}
@@ -31,10 +35,3 @@
 
 {{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
 
-{{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
-{{ if .Site.IsServer }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-{{ else }}
-  {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-{{ end }}

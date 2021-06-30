@@ -1,0 +1,46 @@
+@import "scss/bootstrap.scss";
+@import "_switch";
+@import "_syntax";
+@import "_tags";
+
+$f333_red: #8d0801;
+$f333_dark: hsl(0, 0%, 12%);
+$f333_light: #c2c2c2;
+
+article{
+	img{
+		margin-left: auto !important;
+		margin-right: auto !important;
+		display: block !important;
+		max-width: 100%;
+		height: auto;
+	}
+}
+body {
+	font-family: Menlo Regular, sans-serif;
+	background-color: $f333_dark;
+	color: $f333_light;
+    }
+
+@each $a,
+$b,
+$c in $tags-list {
+	.bg-#{$a} {
+		background-color: $f333_dark;
+		&:hover{
+		background-color: $b;
+		}
+	}
+}
+
+@each $a,
+$b,
+$c in $tags-list {
+	.text-#{$a}{
+		color: $b;
+		&:hover{
+			color: $f333_dark;
+		}
+	}
+
+}
