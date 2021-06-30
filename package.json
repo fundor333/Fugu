@@ -23,7 +23,14 @@
 	"homepage": "https://github.com/fundor333/Fugu#readme",
 	"devDependencies": {
 		"autoprefixer": "^9.8.6",
-		"postcss": "^7.0.36",
+		"postcss": "*",
+		"postcss-import": "^14.0.2",
 		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
+	},
+	"dependencies": {
+		"cssnano": "^5.0.6",
+		"postcss-cssnext": "^3.1.0",
+		"postcss-loader": "^6.1.0",
+		"sugarss": "^4.0.1"
 	}
 }
