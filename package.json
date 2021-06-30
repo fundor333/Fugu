@@ -1,30 +1,31 @@
 {
-  "name": "fugu",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fundor333/Fugu.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fundor333/Fugu/issues"
-  },
-  "homepage": "https://github.com/fundor333/Fugu#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.2.4"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.15.3"
-  }
+	"name": "fugu",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "hugo server --disableFastRender",
+		"dev:example": "hugo server --verbose -s exampleSite --themesDir=../.. --disableFastRender",
+		"build": "NODE_ENV=production hugo --verbose --gc --minify",
+		"build:example": "NODE_ENV=production hugo --verbose --gc --minify -s exampleSite --themesDir=../..",
+		"start": "hugo --gc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fundor333/Fugu.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/fundor333/Fugu/issues"
+	},
+	"homepage": "https://github.com/fundor333/Fugu#readme",
+	"devDependencies": {
+		"autoprefixer": "^10.2.6",
+		"postcss": "^8.3.5",
+		"postcss-cli": "^8.3.1",
+		"postcss-import": "^14.0.2",
+		"tailwindcss": "^2.2.4"
+	}
 }
