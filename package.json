@@ -4,7 +4,11 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "hugo server --disableFastRender",
+		"dev:example": "hugo server --verbose -s exampleSite --themesDir=../.. --disableFastRender",
+		"build": "NODE_ENV=production hugo --verbose --gc --minify",
+		"build:example": "NODE_ENV=production hugo --verbose --gc --minify -s exampleSite --themesDir=../..",
+		"start": "hugo --gc"
 	},
 	"repository": {
 		"type": "git",
@@ -23,6 +27,5 @@
 		"postcss-cli": "^8.3.1",
 		"postcss-import": "^14.0.2",
 		"tailwindcss": "^2.2.4"
-	},
-	"dependencies": {}
+	}
 }
