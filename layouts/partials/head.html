@@ -6,16 +6,30 @@
 <script src="https://kit.fontawesome.com/2f3b6e2e4c.js" crossorigin="anonymous"></script>
 
 <link href="http://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <title>
   {{ .Title | default .Site.Title }} {{ if not .IsHome }} - {{ .Site.Title }}{{ end }}
 </title>
 <meta name="author" content="Fundor333" />
 
-{{ $options := (dict "outputStyle" "compressed") }}
-{{ $style := resources.Get "css/style.scss" | resources.ToCSS $options | postCSS}}
-<link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+{{ $css_options := dict "targetPath" "css/styles.css" }}
+
+{{- if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") -}}
+{{- $css_options = merge $css_options (dict "outputStyle" "compressed") -}}
+{{- end -}}
+
+{{ $sass_template := resources.Get "css/style.scss" }}
+{{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $css_options }}
+
+{{- $style = $style | postCSS | minify  -}}
+
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+
+
 
 {{ if or (eq .Kind "home") (eq .Kind "page")}} {{ if isset .Params "canonical" }}
 <link rel="canonical" href="{{ .Params.Canonical}}" />
@@ -34,4 +48,3 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 {{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
-
