@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ $.Site.LanguageCode | default " en " }}" class="theme-dark">
 {{- partial "head.html" . -}}
 
 <body>
   {{- partial "header.html" . -}}
-    <div id="content">
-      {{- block "main" . }}{{- end }}
-    </div>
+  <div id="content">
+    {{- block "main" . }}{{- end }}
+  </div>
   {{- partial "footer.html" . -}}
 
 </body>

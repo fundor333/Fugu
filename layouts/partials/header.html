@@ -1,10 +1,8 @@
 <header class="w-full pt-5">
   <div class="flex flex-row justify-items-center items-center justify-center px-5">
-    <a href="{{ .Site.BaseURL }}">
-      <button class="flex flex-col justify-items-center items-center justify-center  px-3 leading-normal mt-0 mb-2">
-        <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" id="logo" width="77" length="77">
-        <h1 class="hidden md:flex md:w-auto text-4xl font-title p-3">{{ .Site.Title }}</h1>
-      </button>
+    <a href="{{ .Site.BaseURL }}" class="btn">
+      <img src="{{ .Site.Params.image}}" alt="logo" loading="lazy" id="logo" width="77" length="77">
+      <h1>{{ .Site.Title }}</h1>
     </a>
     <div class="md:hidden">
       <button id="hamburger">
@@ -17,8 +15,7 @@
   <div class="flex flex-wrap justify-center content-center">
     <div class="md:items-center md:justify-center toggle hidden md:flex md:w-auto">
       {{ $currentPage := . }} {{ range .Site.Data.menu }}
-      <a href="{{ .url }}" class="block md:inline-block">
-        <button>{{.name}}</button></a>
+      <a href="{{ .url }}" class="block md:inline-block btn">{{.name}}</a>
       {{ end }}
     </div>
   </div>
@@ -27,23 +24,62 @@
     <div class="items-center justify-center flex text-right">
       {{ $currentPage := . }}
       {{ range .Site.Data.social }}
-      <a href="{{ .url }}" class="inline-block social font-title">
-        <button>
-          <i class="fab fa-{{ .identifier }}" aria-hidden="true">
-          </i>
-        </button>
+      <a href="{{ .url }}" class="inline-block social font-title btn">
+        <i class="fab fa-{{ .identifier }}" aria-hidden="true">
+        </i>
       </a>
       {{ end }}
     </div>
   </div>
 </header>
 
+
 <script>
-  document.getElementById("hamburger").onclick = function toggleMenu() {
-    const navToggle = document.getElementsByClassName("toggle");
-    for (let i = 0; i < navToggle.length; i++) {
-      navToggle.item(i).classList.toggle("hidden");
+  const changeThemeToDark = () => {
+    localStorage.setItem("theme", "dark");
+    document.documentElement.className = "theme-dark";
+    $(".dark").hide();
+    $(".light").show();
+  }
+
+  const changeThemeToLight = () => {
+    localStorage.setItem("theme", "light");
+    document.documentElement.className = "theme-light";
+    $(".dark").show();
+    $(".light").hide();
+  }
+
+  function applyTheme(theme) {
+    if (theme === "light") {
+      changeThemeToLight()
+    } else if (theme === "dark") {
+      changeThemeToDark()
+    } else {
+      changeThemeToDark()
     }
-  };
+  }
+
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme == "dark") {
+    changeThemeToDark();
+  } else if (currentTheme == "light") {
+    changeThemeToLight();
+  }
+
+  $(window).on("load", function () {
+    const currentTheme = localStorage.getItem("theme") || "dark";
+
+    applyTheme(currentTheme);
+
+    document.querySelector("#theme").addEventListener("change", function () {
+      localStorage.setItem("theme", this.value);
+      applyTheme(this.value);
+    });
+
+    for (const optionElement of document.querySelectorAll("#theme option")) {
+      optionElement.selected = currentTheme === optionElement.value;
+    }
+
+  });
 
 </script>

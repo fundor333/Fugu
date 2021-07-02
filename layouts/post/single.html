@@ -7,7 +7,7 @@
   <a class="crumb" href='{{ .Permalink }}'>{{ .Title }}</a>
   <br>
   <hr>
-<br>
+  <br>
   <div>
     {{ if .Params.feature_image }}
     {{ $image := .Resources.GetMatch ( print .Params.feature_image ) }}
@@ -19,11 +19,8 @@
     </div>
   </div>
   {{ with .Params.tags }} {{ range sort . }}
-  <a class="tag" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
-    <button
-            class="bg-{{.}} hover:text-{{.}} dark:text-{{.}} dark:bg-black dark:hover:text-black dark:hover:bg-{{.}}">
+  <a class="btn tag-{{.}}" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
     <i class="fas fa-tags"></i> {{ . }}
-  </button>
   </a>
   {{ end }} {{ end }}
 
@@ -32,7 +29,7 @@
   <br>
   <article class="flex flex-col">
     {{ .Content | safeHTML }}
-      <p>by {{ .Site.Author.name }}</p>
+    <p>by {{ .Site.Author.name }}</p>
   </article>
 
   <hr>
