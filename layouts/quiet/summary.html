@@ -1,0 +1,12 @@
+    <div class="row">
+      <div class="col-sm-2">
+        <img class="img-fluid" src="/img/pilogo.jpg">
+      </div>
+      <div class="col-sm">
+        <p>{{ .Content }}</p>
+        <p>
+          <small class="text-center"><b>#{{ .Title }}</b></small>
+          <small class="text-left">{{dateFormat "2006-01-02" .Date }}</small>
+        </p>
+      </div>
+    </div>

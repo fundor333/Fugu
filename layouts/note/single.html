@@ -1,0 +1,24 @@
+{{ define "main"}}
+<h1>note</h1>
+
+{{ range $.Site.Data.note }}
+
+{{ range .types }}
+<hr>
+<div class="row">
+  <div class="col-sm-2">
+    <h2>{{.type}}</h2>
+  </div>
+  <div class="col-sm-9 offset-sm-1">
+    {{ range .elements }}
+
+    <p><a href="{{.url}}"><b>{{.name}}</b></a> - {{.description}}</p>
+
+    {{end}}
+  </div>
+
+</div>
+
+{{end}}
+{{ end }}
+{{ end }}

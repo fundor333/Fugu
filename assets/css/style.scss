@@ -88,6 +88,15 @@ body {
 	}
 }
 
+.quiet {
+	color: var(--color-font);
+	text-decoration: none;
+
+	&:hover {
+		color: var(--color-font);
+	}
+}
+
 #logo {
 	border-radius: 8px;
 }

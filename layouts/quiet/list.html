@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<section class="container-fluid">
+  <h2><i class="fas fa-alien-monster"></i> {{.Title}} <i class="fas fa-alien-monster"></i></h2>
+  <hr>
+  {{ .Content }}
+
+  {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
+  <hr>
+  {{ range $paginator.Pages }}
+
+  <a href="{{ .Permalink}}" class="quiet">
+    {{ .Render "summary" }}
+  </a>
+  <hr>
+
+  {{ end }}
+  {{ partial "paginator.html" . }}
+</section>
+
+
+{{ end }}
