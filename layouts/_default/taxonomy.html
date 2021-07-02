@@ -2,7 +2,7 @@
 <h1>{{.Title}}</h1>
 
 {{range sort ($.Site.GetPage "taxonomyTerm" "tags").Pages "Title" }}
-<a class="btn tag-{{.Title}}" href='{{ .Permalink }}'>
+<a class="btn tag-{{.Title}} m-2" href='{{ .Permalink }}'>
   <i class="fas fa-tags"></i> {{ .Title}}
 </a>
 {{ end }}

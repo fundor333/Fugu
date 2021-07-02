@@ -11,10 +11,12 @@
   <div class="container-fluid">
     {{ if .Params.feature_image }}
     {{ $image := .Resources.GetMatch ( print .Params.feature_image ) }}
-    <img class="img-fluid" src="{{  $image.Permalink  }}" alt="Card image cap">
+    <div class="col-10 offset-1">
+      <img class="img-fluid" src="{{  $image.Permalink  }}" alt="Card image cap">
+    </div>
     {{end}}
     </a>
-    <div>
+    <div class="row">
       <a href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>
     </div>
   </div>
