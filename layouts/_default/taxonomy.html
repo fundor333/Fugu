@@ -2,11 +2,9 @@
 <h1>{{.Title}}</h1>
 
 {{range sort ($.Site.GetPage "taxonomyTerm" "tags").Pages "Title" }}
-<a class="hidden md:inline-flex" href='{{ .Permalink }}'>
-  <button
-    class="bg-{{.Title}} hover:text-{{.Title}} dark:text-{{.Title}} dark:bg-black dark:hover:text-black dark:hover:bg-{{.Title}}">
-    <i class="fas fa-tags"></i> {{ .Title}}
-  </button></a>
+<a class="btn tag-{{.Title}}" href='{{ .Permalink }}'>
+  <i class="fas fa-tags"></i> {{ .Title}}
+</a>
 {{ end }}
 
 {{ $paginator := .Paginate .Data.Pages }}

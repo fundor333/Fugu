@@ -1,4 +1,4 @@
-<nav class="flex flex-row items-center justify-center content-center mt-2">
+<nav class="d-flex align-items-center justify-content-center">
   {{ $paginator := .Paginator }}
 
   <!-- If there's more than one page. -->
@@ -7,48 +7,38 @@
 
   <!-- First page. -->
   {{ if ne $paginator.PageNumber 1 }}
-  <a href="{{ $paginator.First.URL }}">
-    <button>
-      ««
-    </button>
+  <a class="btn" href="{{ $paginator.First.URL }}">
+    ««
   </a>
   {{ end }}
 
   <!-- Previous page. -->
   {{ if $paginator.HasPrev }}
-  <a href="{{ $paginator.Prev.URL }}">
-    <button>
-      «
-    </button>
+  <a class="btn" href="{{ $paginator.Prev.URL }}">
+    «
   </a>
   {{ end }}
 
   <!-- Page numbers. -->
   {{ range $paginator.Pagers }}
-  <a href="{{ .URL }}">
-    <button>
-      {{ .PageNumber }}
-    </button>
+  <a class="btn" href="{{ .URL }}">
+    {{ .PageNumber }}
   </a>
   {{ end }}
 
   <!-- Next page. -->
   {{ if $paginator.HasNext }}
 
-  <a href="{{ $paginator.Next.URL }}">
-    <button>
-      »
-    </button>
+  <a class="btn" href="{{ $paginator.Next.URL }}">
+    »
   </a>
   {{ end }}
 
   <!-- Last page. -->
   {{ if ne $paginator.PageNumber $paginator.TotalPages }}
 
-  <a href="{{ $paginator.Last.URL }}">
-    <button>
-      »»
-    </button>
+  <a class="btn" href="{{ $paginator.Last.URL }}">
+    »»
   </a>
   {{ end }}
   {{ end }}

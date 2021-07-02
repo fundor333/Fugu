@@ -1,16 +1,15 @@
-<footer class="flex flex-wrap justify-center content-center">
-  <div class="md:items-center md:justify-center toggle hidden md:flex md:w-auto">
-    <a href='https://webring.recurse.com' class="nav-item" target='_blank'>
-      <img src='https://webring.recurse.com/icon.png' width="30" height="33" />
-    </a>
-    <a href='https://webring.xxiivv.com/#random' target='_blank'>
-      <img width="30" height="33" src='https://webring.xxiivv.com/icon.white.svg' />
-    </a>
-  </div>
+<footer class="d-flex align-items-center justify-content-center">
+  <a href='https://webring.recurse.com' target='_blank' class="btn">
+    <img src='https://webring.recurse.com/icon.png' width="30" height="33" />
+  </a>
+
+  <a href='https://webring.xxiivv.com/#random' target='_blank' class="btn">
+    <img width=" 30" height="33" src='https://webring.xxiivv.com/icon.white.svg' />
+  </a>
 </footer>
 
 <div class="fixed-bottom">
-  <div class="float-right pb-3 pr-5">
+  <div class="d-flex align-items-end justify-content-end">
     <button class="btn btn-thm btn-lg light" style="display:none" onclick="changeThemeToLight()">
       <div class="fa-theme">
         <i class="fas fa-starfighter"></i>
@@ -23,57 +22,3 @@
     </button>
   </div>
 </div>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var lazyloadImages;
-
-    if ("IntersectionObserver" in window) {
-      lazyloadImages = document.querySelectorAll(".lazy");
-      var imageObserver = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var image = entry.target;
-            image.src = image.dataset.src;
-            image.classList.remove("lazy");
-            imageObserver.unobserve(image);
-          }
-        });
-      });
-
-      lazyloadImages.forEach(function (image) {
-        imageObserver.observe(image);
-      });
-    } else {
-      var lazyloadThrottleTimeout;
-      lazyloadImages = document.querySelectorAll(".lazy");
-
-      function lazyload() {
-        if (lazyloadThrottleTimeout) {
-          clearTimeout(lazyloadThrottleTimeout);
-        }
-
-        lazyloadThrottleTimeout = setTimeout(function () {
-          var scrollTop = window.pageYOffset;
-          lazyloadImages.forEach(function (img) {
-            if (img.offsetTop < (window.innerHeight + scrollTop)) {
-              img.src = img.dataset.src;
-              img.classList.remove('lazy');
-            }
-          });
-          if (lazyloadImages.length == 0) {
-            document.removeEventListener("scroll", lazyload);
-            window.removeEventListener("resize", lazyload);
-            window.removeEventListener("orientationChange", lazyload);
-          }
-        }, 360);
-      }
-
-      document.addEventListener("scroll", lazyload);
-      window.addEventListener("resize", lazyload);
-      window.addEventListener("orientationChange", lazyload);
-    }
-  })
-
-</script>

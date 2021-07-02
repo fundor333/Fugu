@@ -3,12 +3,18 @@
 {{- partial "head.html" . -}}
 
 <body>
+  <br>
   {{- partial "header.html" . -}}
-  <div id="content">
+  <div id="content" class="container">
+    <hr>
     {{- block "main" . }}{{- end }}
+    <hr>
+    <br>
   </div>
-  {{- partial "footer.html" . -}}
-
+  <div class="container">
+    {{- partial "footer.html" . -}}
+  </div>
+  {{- partial "script.html" . -}}
 </body>
 
 </html>

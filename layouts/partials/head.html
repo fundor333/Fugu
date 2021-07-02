@@ -5,7 +5,6 @@
 
 <script src="https://kit.fontawesome.com/2f3b6e2e4c.js" crossorigin="anonymous"></script>
 
-<link href="http://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -17,10 +16,7 @@
 
 {{ $css_options := dict "targetPath" "css/styles.css" }}
 
-{{- if (in (slice (getenv "HUGO_ENV") hugo.Environment) "production") -}}
 {{- $css_options = merge $css_options (dict "outputStyle" "compressed") -}}
-{{- end -}}
-
 {{ $sass_template := resources.Get "css/style.scss" }}
 {{ $style := $sass_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $css_options }}
 

@@ -3,6 +3,8 @@
 @import "_syntax";
 @import "_tags";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 $f333_red: #8d0801;
 $f333_dark: hsl(0, 0%, 12%);
 $f333_light: #c2c2c2;
@@ -21,6 +23,11 @@ $f333_light: #c2c2c2;
 
 a {
 	color: var(--color-font);
+	text-decoration: none;
+
+	&:hover {
+		color: var(--color-link);
+	}
 }
 
 article {
@@ -34,7 +41,7 @@ article {
 }
 
 body {
-	font-family: Menlo Regular, sans-serif;
+	font-family: 'Playfair Display', serif;
 	background-color: var(--color-background);
 	color: var(--color-font);
 }
@@ -53,18 +60,19 @@ body {
 	$b,
 	$c in $tags-list {
 		&.tag-#{$a} {
-			background-color: $f333_dark;
+
+			margin-top: 2px;
+			margin-bottom: 2px;
 
 			&:hover {
-				background-color: $b;
+				background-color: var(--color-background);
+				color: $b;
 			}
 
-			color: $b;
-
-			&:hover {
-				color: $f333_dark;
-			}
+			background-color: $b;
+			color: $f333_dark;
 		}
+
 
 	}
 }

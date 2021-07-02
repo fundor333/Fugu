@@ -1,7 +1,7 @@
 <hr class="my-5">
 
 <div class="col-start-2 col-span-10">
-  <article class=" flex flex-col items-center">
+  <article class="flex flex-col items-center">
     <a href="{{ .Permalink }}">
       <h2 class="text-center py-2">{{ .Title }}</h2>
     </a>
@@ -20,24 +20,26 @@
     </a>
     {{ end }}
 
-    <a href="{{ .Permalink }}" class="p-5">{{ .Description }}</a>
-    <p class="pt-3">
+    <a href="{{ .Permalink }}" class="d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
+    <div class="d-flex align-items-center justify-content-center pt-3">
       <small class=""><i class="fas fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fas fa-mug-tea"></i>{{ if gt
         .ReadingTime
         7 }}<i class="fas fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fas fa-mug-tea"></i>{{ end }}{{ end }}{{
         end }}
         Reading time {{.ReadingTime}} minutes
       </small>
-    </p>
+    </div>
 
-    <p>
-      <small>
+
+    <div class="container">
+      <div class="row justify-content-center">
         {{ with .Params.tags }} {{ range sort . }}
-        <a class="btn tag-{{.}}" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+        <a class="col btn tag-{{.}} m-2" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
           <i class="fas fa-tags"></i> {{ . }}
         </a>
         {{ end }} {{ end }}
-      </small>
-    </p>
+      </div>
+    </div>
+
   </article>
 </div>

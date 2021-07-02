@@ -1,11 +1,17 @@
 {{ define "main" }}
-  <div class="text-justify">
+
+<div class="col-10 offset-1 text-center">
+  <div id="gr_quote_body"></div>
+  <script src="https://www.goodreads.com/quotes/widget/5312887-matteo?v=2" type="text/javascript"></script>
+</div>
+<hr>
+<div class="text-center">
   {{ .Content }}
-  </div>
-  {{ range  first 4 (where .Site.RegularPages "Section" "post")  }}
+</div>
+{{ range  first 4 (where .Site.RegularPages "Section" "post")  }}
 
-  {{ .Render "summary" }}
+{{ .Render "summary" }}
 
-  {{ end }}
+{{ end }}
 
 {{ end }}
