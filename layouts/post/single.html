@@ -9,8 +9,8 @@
   <hr>
   <br>
   <div class="container-fluid">
-    {{ if .Params.feature_image }}
-    {{ $image := .Resources.GetMatch ( print .Params.feature_image ) }}
+    {{ if .Params.cover }}
+    {{ $image := .Resources.GetMatch ( print .Params.cover ) }}
     <div class="col-10 offset-1">
       <img class="img-fluid" src="{{  $image.Permalink  }}" alt="Card image cap">
     </div>

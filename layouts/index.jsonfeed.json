@@ -17,7 +17,7 @@
 	     "title": "{{ $element.Title }}",
 	     "url": "{{ $element.Permalink }}",
 	     "summary": {{ $element.Summary | jsonify }},
-	     {{ if $element.Params.feature_image }}"image": "{{ $image := $element.Resources.GetMatch ( print $element.Params.feature_image ) }}",{{ end }}
+	     {{ if $element.Params.cover }}"image": "{{ $image := $element.Resources.GetMatch ( print $element.Params.cover ) }}",{{ end }}
 	     "date_published": "{{ $element.Date.Format "2006-01-02T15:04:05Z07:00" }}",
 	     "date_modified": "{{ $element.Lastmod.Format "2006-01-02T15:04:05Z07:00" }}"        
 	   }
