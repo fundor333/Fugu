@@ -9,13 +9,13 @@
   <hr>
   <br>
   <div class="container-fluid">
-    {{ if .Params.cover }}
-    {{ $image := .Resources.GetMatch ( print .Params.cover ) }}
+
+    {{ with .Resources.GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
     <div class="col-10 offset-1">
-      <img class="img-fluid" src="{{  $image.Permalink  }}" alt="Card image cap">
+      <img class="img-fluid" src="{{  .Permalink  }}" alt="Card image cap">
     </div>
     {{end}}
-    </a>
+
     <div class="row">
       <a href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>
     </div>

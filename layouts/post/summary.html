@@ -6,20 +6,13 @@
       <h2 class="text-center py-2">{{ .Title }}</h2>
     </a>
 
-    {{ if .Params.cover }}
     <a href="{{ .Permalink }}">
-
-      {{ $image := .Resources.GetMatch ( print .Params.cover ) }}
-      {{ $resource := $image}}
-      {{ $image := $image.Resize "600x q10" }}
-      {{ $image = $image.Filter ((images.Pixelate 8) ) ((images.Pixelate 8)) (images.GaussianBlur 80 ) }}
-
-      {{ $image = $image.Filter (images.GaussianBlur 20 ) }}
-
-      <img data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}" alt="{{ $.Title }}"
-        class="lazy col-10 offset-1 rounded">
+      {{ with .Resources.GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
+      <div class="col-10 offset-1">
+        <img class="img-fluid" src="{{  .Permalink  }}" alt="Card image cap">
+      </div>
+      {{end}}
     </a>
-    {{ end }}
 
     <a href="{{ .Permalink }}" class="d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
     <div class="d-flex align-items-center justify-content-center pt-3">
