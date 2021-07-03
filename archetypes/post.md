@@ -2,7 +2,6 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-feature: "cover.jpg"
 feature_link: ""
 feature_text: "Photo by __ __ on Unsplash"
 tags:
