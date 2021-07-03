@@ -10,96 +10,96 @@ $f333_dark: hsl(0, 0%, 12%);
 $f333_light: #c2c2c2;
 
 .theme-light {
-	--color-font: #{$f333_dark};
-	--color-background: #{$f333_light};
-	--color-link: #{$f333_red};
+  --color-font: #{$f333_dark};
+  --color-background: #{$f333_light};
+  --color-link: #{$f333_red};
 }
 
 .theme-dark {
-	--color-font: #{$f333_light};
-	--color-background: #{$f333_dark};
-	--color-link: #{$f333_red};
+  --color-font: #{$f333_light};
+  --color-background: #{$f333_dark};
+  --color-link: #{$f333_red};
 }
 
 a {
-	color: var(--color-font);
-	text-decoration: none;
+  color: var(--color-font);
+  text-decoration: none;
 
-	&:hover {
-		color: var(--color-link);
-	}
+  &:hover {
+    color: var(--color-link);
+  }
+
+  &.quiet-link {
+    color: var(--color-font);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-font);
+    }
+  }
 }
 
 article {
-	img {
-		margin-left: auto !important;
-		margin-right: auto !important;
-		display: block !important;
-		max-width: 100%;
-		height: auto;
-	}
+  img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 body {
-	font-family: 'Playfair Display', serif;
-	background-color: var(--color-background);
-	color: var(--color-font);
+  font-family: 'Playfair Display', serif;
+  background-color: var(--color-background);
+  color: var(--color-font);
 }
 
 
 .btn {
+  background-color: var(--color-background);
+  color: var(--color-font);
+
+  &:hover {
+    background-color: var(--color-font);
+    color: var(--color-background);
+  }
+
+  @each $a,
+  $b,
+  $c in $tags-list {
+    &.tag-#{$a} {
+
+      margin-top: 2px;
+      margin-bottom: 2px;
+      border: 2px solid;
+      border-color: var(--color-background);
+
+      &:hover {
 	background-color: var(--color-background);
-	color: var(--color-font);
+	color: $b;
+	border-color: $b;
+      }
 
-	&:hover {
-		background-color: var(--color-font);
-		color: var(--color-background);
-	}
-
-	@each $a,
-	$b,
-	$c in $tags-list {
-		&.tag-#{$a} {
-
-			margin-top: 2px;
-			margin-bottom: 2px;
-			border: 2px solid;
-			border-color: var(--color-background);
-
-			&:hover {
-				background-color: var(--color-background);
-				color: $b;
-				border-color: $b;
-			}
-
-			background-color: $b;
-			color: $f333_dark;
-		}
+      background-color: $b;
+      color: $f333_dark;
+    }
 
 
-	}
+  }
 }
 
 .dark,
 .light {
-	background-color: var(--color-font);
-	color: var(--color-background);
+  background-color: var(--color-font);
+  color: var(--color-background);
 
-	&:hover {
-		background-color: var(--color-background);
-		color: var(--color-font);
-	}
-}
-
-.quiet {
-	color: var(--color-font);
-	text-decoration: none;
-
-	&:hover {
-		color: var(--color-font);
-	}
+  &:hover {
+    background-color: var(--color-background);
+    color: var(--color-font);
+  }
 }
 
 #logo {
-	border-radius: 8px;
+  border-radius: 8px;
 }

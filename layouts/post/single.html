@@ -5,7 +5,13 @@
   <a href="{{ .Site.BaseURL }}">home</a>
   ~
   <a href='{{ .Permalink }}'>{{ .Title }}</a>
-  <br>
+
+  <p class=""><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt
+    .ReadingTime
+    7 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}{{
+    end }}
+    Reading time {{.ReadingTime}} minutes
+  </p>
   <hr>
   <br>
   <div class="container-fluid">
@@ -49,7 +55,7 @@
   {{ .Render "summary" }}
   {{ end }}
   {{ end }}
-
+<hr>
   {{ template "_internal/disqus.html" . }}
 </div>
 {{ end }}

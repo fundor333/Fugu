@@ -16,12 +16,12 @@
 
     <a href="{{ .Permalink }}" class="d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
     <div class="d-flex align-items-center justify-content-center pt-3">
-      <small class=""><i class="fas fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fas fa-mug-tea"></i>{{ if gt
+      <p class=""><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt
         .ReadingTime
-        7 }}<i class="fas fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fas fa-mug-tea"></i>{{ end }}{{ end }}{{
+        7 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}{{
         end }}
         Reading time {{.ReadingTime}} minutes
-      </small>
+      </p>
     </div>
 
 
