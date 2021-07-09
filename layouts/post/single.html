@@ -23,7 +23,8 @@
 
     {{ $image = $image.Filter (images.GaussianBlur 20 ) }}
     <div class="col-10 offset-1">
-      <img class="img-fluid lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}" alt="Card image cap">
+      <img class="img-fluid lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}"
+        alt="Card image cap">
     </div>
 
     <div class="row">
@@ -31,14 +32,15 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      {{ with .Params.tags }} {{ range sort . }}
-      <a class="col btn tag-{{.}} m-2" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
-        <i class="fas fa-tags"></i> {{ . }}
-      </a>
-      {{ end }} {{ end }}
-    </div>
+  <div class="container text-center">
+    {{ with .Params.tags }} {{ range sort . }}
+    <a class="btn tag-{{.}} m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+      {{ .}}
+    </a>
+    <a class="btn tag-{{.}} m-2 d-md-inline-block d-sm-none d-none" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+      <i class="fas fa-tags"></i> {{ .}}
+    </a>
+    {{ end }} {{ end }}
   </div>
 
   <hr>
@@ -59,7 +61,7 @@
   {{ .Render "summary" }}
   {{ end }}
   {{ end }}
-<hr>
+  <hr>
   {{ template "_internal/disqus.html" . }}
 </div>
 {{ end }}
