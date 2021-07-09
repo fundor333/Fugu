@@ -36,7 +36,7 @@
     </div>
 
     <div class="row">
-      <a href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>
+      <a class="text-center" href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>
     </div>
   </div>
 
@@ -54,7 +54,7 @@
   <hr>
 
   <br>
-  <article class="flex flex-col">
+  <article class="flex flex-col px-3">
     {{ .Content | safeHTML }}
     <p>by {{ .Site.Author.name }}</p>
   </article>
