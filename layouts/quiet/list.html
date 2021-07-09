@@ -10,13 +10,15 @@
   {{ range $paginator.Pages }}
   <div class="col-sm-6 col-12 ml-md-auto">
     <hr>
-    <a href="{{ .Permalink}}" class="quiet">
+    <a href="{{ .Permalink}}" class="quiet btn">
       {{ .Render "summary" }}
     </a>
   </div>
 
   {{ end }}
 </div>
+
+<hr>
 {{ partial "paginator.html" . }}
 
 

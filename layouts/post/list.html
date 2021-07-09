@@ -8,6 +8,7 @@
   </a>
   {{ end }}
 </div>
+<hr>
 
 {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
 {{ range $paginator.Pages }}
@@ -15,6 +16,7 @@
 {{ .Render "summary" }}
 
 {{ end }}
+<hr>
 {{ partial "paginator.html" . }}
 
 {{ end }}
