@@ -1,13 +1,14 @@
-<hr class="my-5">
-
 <div class="col-start-2 col-span-10">
-  <article class="flex flex-col items-center">
+  <article class="flex flex-col items-center text-center">
+    <a href="/quiet" class="quiet-link d-none d-md-block p-3">
+      <h2><i class="fa-duotone fa-dice-d20"></i></h2>
+    </a>
+
     <a href="{{ .Permalink }}">
       <h2 class="text-center py-2">{{ .Title }}</h2>
     </a>
 
     <a href="{{ .Permalink }}">
-
       {{ $image := .Resources.GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
       {{ $resource := $image}}
       {{ $image := $image.Resize "600x q10" }}
@@ -18,7 +19,6 @@
         <img class="img-fluid lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}"
           alt="Card image cap">
       </div>
-
     </a>
 
     <a href="{{ .Permalink }}" class="d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
@@ -30,7 +30,6 @@
         Reading time {{.ReadingTime}} minutes
       </p>
     </div>
-
 
     <div class="container text-center">
       {{ with .Params.tags }} {{ range sort . }}

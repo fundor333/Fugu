@@ -1,11 +1,13 @@
 {{ define "main" }}
-<h1>{{.Title}}</h1>
+<h1 class="text-center">{{.Title}}</h1>
 
-{{range sort ($.Site.GetPage "taxonomyTerm" "tags").Pages "Title" }}
-<a class="btn tag-{{.Title}} m-2" href='{{ .Permalink }}'>
-  <i class="fas fa-tags"></i> {{ .Title}}
-</a>
-{{ end }}
+<div class="text-center">
+  {{range sort ($.Site.GetPage "taxonomyTerm" "tags").Pages "Title" }}
+  <a class="btn tag-{{.Title}} m-2" href='{{ .Permalink }}'>
+    <i class="fas fa-tags"></i> {{ .Title}}
+  </a>
+  {{ end }}
+</div>
 
 {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
 {{ range $paginator.Pages }}

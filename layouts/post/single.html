@@ -1,12 +1,20 @@
 {{ define "main"}}
 <div class="container-fluid">
-  <h1>{{ .Title }}</h1>
+  <h1 class="text-center">
+    <a href="/quiet" class="quiet-link px-3"> <i class="fa-duotone fa-dice-d20"></i></a>
+    {{ .Title }}
+    <a href="/quiet" class="quiet-link px-3"> <i class="fa-duotone fa-dice-d20"></i></a>
+  </h1>
   <hr>
-  <a href="{{ .Site.BaseURL }}">home</a>
-  ~
-  <a href='{{ .Permalink }}'>{{ .Title }}</a>
+  <div class="container-fluid text-center">
 
-  <p class=""><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt
+    <a href="{{ .Site.BaseURL }}">home</a>
+    ~
+    <a href='{{ .Permalink }}'>{{ .Title }}</a>
+  </div>
+
+  <p class="text-center"><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i
+      class="fa-duotone fa-mug-tea"></i>{{ if gt
     .ReadingTime
     7 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}{{
     end }}
@@ -51,12 +59,11 @@
     <p>by {{ .Site.Author.name }}</p>
   </article>
 
-  <hr>
-
   {{ $related := .Site.RegularPages.Related . | first 3 }}
   {{ with $related }}
+  <hr>
   <br>
-  <h3>See Also</h3>
+  <h3 class="text-center">See Also</h3>
   {{ range . }}
   {{ .Render "summary" }}
   {{ end }}
