@@ -6,6 +6,8 @@
 </div>
 <hr>
 <div class="text-center">
+  <h1 class="d-flex align-items-center justify-content-center">{{ .Site.Title }}</h1>
+  <br>
   {{ .Content }}
 </div>
 {{ range  first 4 (where .Site.RegularPages "Section" "post")  }}
