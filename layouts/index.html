@@ -6,7 +6,11 @@
 </div>
 <hr>
 <div class="text-center">
-  <h1 class="d-flex align-items-center justify-content-center">{{ .Site.Title }}</h1>
+  <h1 class="text-center">
+    <a href="/quiet" class="quiet-link px-3"> <i class="fa-duotone fa-dice-d20"></i></a>
+    {{ .Title }}
+    <a href="/quiet" class="quiet-link px-3"> <i class="fa-duotone fa-dice-d20"></i></a>
+  </h1>
   <br>
   {{ .Content }}
 </div>

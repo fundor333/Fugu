@@ -15,7 +15,7 @@
       {{ $image = $image.Filter ((images.Pixelate 8) ) ((images.Pixelate 8)) (images.GaussianBlur 80 ) }}
 
       {{ $image = $image.Filter (images.GaussianBlur 20 ) }}
-      <div class="col-10 offset-1">
+      <div class="col-10 offset-1 text-center">
         <img class="img-fluid lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}"
           alt="Card image cap">
       </div>
