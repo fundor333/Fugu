@@ -3,7 +3,7 @@
 @import "_syntax";
 @import "_tags";
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Syne+Mono&display=swap');
 
 $f333_red: #8d0801;
 $f333_dark: hsl(0, 0%, 12%);
@@ -53,6 +53,14 @@ body {
 	font-family: 'Playfair Display', serif;
 	background-color: var(--color-background);
 	color: var(--color-font);
+}
+
+blockquote {
+	font-family: 'Syne Mono', serif;
+	border-left: 2px solid $f333_red;
+	margin: 1.5em 25px;
+	padding: 1px 10px;
+	quotes: "\201C""\201D""\2018""\2019";
 }
 
 img {
