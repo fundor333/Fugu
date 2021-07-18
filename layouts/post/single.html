@@ -13,13 +13,6 @@
     <a href='{{ .Permalink }}'>{{ .Title }}</a>
   </div>
 
-  <p class="text-center"><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i
-      class="fa-duotone fa-mug-tea"></i>{{ if gt
-    .ReadingTime
-    7 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}{{
-    end }}
-    Reading time {{.ReadingTime}} minutes
-  </p>
   <hr>
   <br>
   <div class="container-fluid">
@@ -34,12 +27,21 @@
       <img class="img-fluid lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}"
         alt="Card image cap">
     </div>
-
+    <br>
     <div class="row">
       <a class="text-center" href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>
     </div>
   </div>
-
+  <br>
+  <div class="text-center"><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i
+      class="fa-duotone fa-mug-tea"></i>{{ if gt
+.ReadingTime
+7 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}{{
+end }}
+    Reading time {{.ReadingTime}} minutes
+  </div>
+  <div class="text-center"><i class="fad fa-pen-nib"></i> Word count {{.WordCount}}</div>
+  <br>
   <div class="container text-center">
     {{ with .Params.tags }} {{ range sort . }}
     <a class="btn tag-{{.}} m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
