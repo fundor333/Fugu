@@ -6,15 +6,16 @@
 
 {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
 
-<div class="row">
+<div class="row row-cols-1 row-cols-md-2 g-4 my-auto">
   {{ range $paginator.Pages }}
-  <div class="col-sm-6 col-12 ml-md-auto">
-    <hr>
-    <a href="{{ .Permalink}}" class="quiet btn">
-      {{ .Render "summary" }}
+  <div class="col">
+    <a class="quiet btn card" href="{{ .Permalink}}">
+      <div>
+        <hr>
+        {{ .Render "summary" }}
+      </div>
     </a>
   </div>
-
   {{ end }}
 </div>
 
