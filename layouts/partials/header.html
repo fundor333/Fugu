@@ -13,8 +13,11 @@
   <div class="d-flex align-items-center justify-content-center">
     <a href="/quiet" class="quiet-link d-none d-md-block px-3"> <i class="fa-solid fa-dice-d12"></i></a>
 
-    {{ $currentPage := . }} {{ range .Site.Data.menu }}
-    <a href=" {{ .url }}" class="block btn ">{{.name}}</a>
+
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <a class="block btn {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+      href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     {{ end }}
     <a href="/quiet" class="quiet-link d-none d-md-block px-3"> <i class="fa-solid fa-dice-d12"></i></a>
 
