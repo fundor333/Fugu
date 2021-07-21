@@ -11,7 +11,7 @@
 
     {{ $image = $image.Filter (images.GaussianBlur 20 ) }}
 
-    <img data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}" alt="{{ $.Title }}"
+    <img loading="lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}" alt="{{ $.Title }}"
       class="img-fluid rounded lazy rounded-circle">
   </div>
   <div class="col col-md">
