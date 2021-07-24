@@ -65,6 +65,7 @@ end }}
       href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via=fundor333"
       class="share__link" title="Share on Twitter">share it on <i class="fa-brands fa-twitter"></i></a>
   </p>
+  <hr>
   {{ $related := .Site.RegularPages.Related . | first 3 }}
   {{ with $related }}
 
