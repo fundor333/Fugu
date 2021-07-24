@@ -17,16 +17,14 @@
   <br>
   <div class="container-fluid">
 
-    {{ $image := .Resources.GetMatch "{cover.*}" }}
-    {{ $resource := $image}}
-    {{ $image := $image.Resize "600x q10" }}
-    {{ $image = $image.Filter ((images.Pixelate 8) ) ((images.Pixelate 8)) (images.GaussianBlur 80 ) }}
+    {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}" }}
+    {{ $resource := imageConfig (add "/content/" $image.RelPermalink) }}
 
-    {{ $image = $image.Filter (images.GaussianBlur 20 ) }}
     <div class="col-10 offset-1 text-center">
-      <img loading="lazy" class="img-fluid lazy" data-src="{{ $resource.Permalink }}" src="{{ $image.Permalink }}"
-        width="{{ $resource.Width }}" height="{{ $resource.Height }}" alt="Card image cap">
+      <img loading="lazy" class="img-fluid lazy" src="{{ $image.Permalink }}" width="{{ $resource.Width }}"
+        height="{{ $resource.Height }}" alt="Card image cap">
     </div>
+
     <br>
     <div class="row">
       <a class="text-center" href="{{ .Params.feature_link}}">{{.Params.feature_text}}</a>

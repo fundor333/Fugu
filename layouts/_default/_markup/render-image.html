@@ -8,14 +8,14 @@
 
   {{ if ($isJPG) -}}
   {{ $avifPath:= replace .Destination ".jpg" ".avif" }}
-  {{ $avifPathStatic:= printf "static/%s" $avifPath }}
+  {{ $avifPathStatic:= (add (add "/content/" .Page.Dir)  $avifPath) }}
 
   {{ if (fileExists $avifPathStatic) -}}
   <source srcset="{{ $avifPath | safeURL }}" type="image/avif">
   {{- end }}
 
   {{ $webpPath:= replace .Destination ".jpg" ".webp" }}
-  {{ $webpPathStatic:= printf "static/%s" $webpPath }}
+  {{ $webpPathStatic:= (add (add "/content/" .Page.Dir)  $webpPath )}}
 
   {{ if (fileExists $webpPathStatic) -}}
   <source srcset="{{ $webpPath | safeURL }}" type="image/webp">
@@ -24,14 +24,14 @@
 
   {{ if ($isPNG) -}}
   {{ $avifPath:= replace .Destination ".png" ".avif" }}
-  {{ $avifPathStatic:= printf "static/%s" $avifPath }}
+  {{ $avifPathStatic:= (add (add "/content/" .Page.Dir)  $avifPath )}}
 
   {{ if (fileExists $avifPathStatic) -}}
   <source srcset="{{ $avifPath | safeURL }}" type="image/avif">
   {{- end }}
 
   {{ $webpPath:= replace .Destination ".png" ".webp" }}
-  {{ $webpPathStatic:= printf "static/%s" $webpPath }}
+  {{ $webpPathStatic:= (add (add "/content/" .Page.Dir)  $webpPath )}}
 
   {{ if (fileExists $webpPathStatic) -}}
   <source srcset="{{ $webpPath | safeURL }}" type="image/webp">
