@@ -60,11 +60,14 @@ end }}
     {{ .Content | safeHTML }}
     <p>by {{ .Site.Author.name }}</p>
   </article>
-
+  <hr>
+  <p class="text-center">If you liked this article, please <a
+      href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via=fundor333"
+      class="share__link" title="Share on Twitter">share it on <i class="fa-brands fa-twitter"></i></a>
+  </p>
   {{ $related := .Site.RegularPages.Related . | first 3 }}
   {{ with $related }}
-  <hr>
-  <br>
+
   <h3 class="text-center">See Also</h3>
   {{ range . }}
   {{ .Render "summary" }}
