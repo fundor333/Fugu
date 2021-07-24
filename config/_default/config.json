@@ -1,0 +1,80 @@
+{
+	"disableRSS": false,
+	"enableRobotsTXT": true,
+	"Paginate": 8,
+	"rssLimit": 9,
+	"related": {
+		"includeNewer": true,
+		"threshold": 80,
+		"toLower": false,
+		"indices": [
+			{
+				"name": "title",
+				"weight": 30
+			},
+			{
+				"name": "description",
+				"weight": 30
+			},
+			{
+				"name": "tags",
+				"weight": 30
+			},
+			{
+				"name": "date",
+				"weight": 10
+			}
+		]
+	},
+	"minify": {
+		"minifyOutput": true
+	},
+	"outputs": {
+		"section": [
+			"HTML",
+			"RSS"
+		],
+		"home": [
+			"html",
+			"rss",
+			"jsonfeed"
+		],
+		"page": [
+			"html"
+		]
+	},
+	"outputFormats": {
+		"jsonfeed": {
+			"mediaType": "application/json",
+			"baseName": "feed",
+			"isPlainText": true
+		}
+	},
+	"privacy": {
+		"googleAnalytics": {
+			"anonymizeIP": true,
+			"disable": false,
+			"respectDoNotTrack": true,
+			"useSessionStorage": true,
+			"pygmentsCodeFences": true,
+			"pygmentsStyle": "native"
+		},
+		"twitter": {
+			"disableInlineCSS": true,
+			"simple": true
+		},
+		"markup": {
+			"highlight": {
+				"hl_Lines": "",
+				"lineNoStart": 1,
+				"lineNos": true,
+				"tabWidth": 4
+			}
+		},
+		"sitemap": {
+			"changefreq": "monthly",
+			"filename": "sitemap.xml",
+			"priority": 0.5
+		}
+	}
+}
