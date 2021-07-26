@@ -53,7 +53,6 @@ body {
 	font-family: 'Playfair Display', serif;
 	background-color: var(--color-background);
 	color: var(--color-font);
-	font-size: 1.25rem;
 }
 
 blockquote {
@@ -67,10 +66,6 @@ img {
 	&.img-fluid {
 		max-width: 75%;
 	}
-}
-
-sup{
-	font-size: 1rem;
 }
 
 .btn {
