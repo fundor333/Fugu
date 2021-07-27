@@ -1,6 +1,6 @@
 {{- $src := ( .Destination | safeURL ) -}}
 {{- if strings.HasPrefix $src "http" -}}
-<img class="img-post" loading="lazy" src="{{ .Destination} | safeURL }}" alt="{{ .Text }}" {{ with .Title}}
+<img class="img-post" loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}}
   title="{{ . }}" {{ end }} />
 {{- else -}}
 <picture>
