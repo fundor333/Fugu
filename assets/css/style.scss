@@ -39,15 +39,7 @@ a {
 	}
 }
 
-article {
-	img {
-		margin-left: auto !important;
-		margin-right: auto !important;
-		display: block !important;
-		max-width: 100%;
-		height: auto;
-	}
-}
+
 
 body {
 	font-family: 'Playfair Display', serif;
@@ -67,6 +59,23 @@ img {
 		max-width: 75%;
 	}
 }
+
+sub,
+sup {
+	position: relative;
+	font-size: 1em;
+}
+
+.a-post {
+	color: var(--color-link);
+	text-decoration: underline;
+
+	&:hover {
+		color: var(--color-font);
+	}
+
+}
+
 
 .btn {
 	background-color: var(--color-background);
@@ -116,6 +125,14 @@ img {
 	border-left: 2px solid $f333_red;
 	margin: 1.5em 25px;
 	padding: 1px 10px;
+}
+
+.img-post {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	display: block !important;
+	max-width: 100%;
+	height: auto;
 }
 
 .quiet {

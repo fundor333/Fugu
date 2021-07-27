@@ -1,6 +1,7 @@
 {{- $src := ( .Destination | safeURL ) -}}
 {{- if strings.HasPrefix $src "http" -}}
-<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+<img class="img-post" loading="lazy" src="{{ .Destination} | safeURL }}" alt="{{ .Text }}" {{ with .Title}}
+  title="{{ . }}" {{ end }} />
 {{- else -}}
 <picture>
   {{ $isJPG := eq (path.Ext .Destination) ".jpg" }}
@@ -40,7 +41,7 @@
 
   {{ $img := imageConfig (add (add "/content/" .Page.Dir)  .Destination) }}
 
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async" width="{{ $img.Width }}"
-    height="{{ $img.Height }}" />
+  <img class="img-post" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async"
+    width="{{ $img.Width }}" height="{{ $img.Height }}" />
 </picture>
 {{- end -}}
