@@ -1,7 +1,6 @@
 {{ $data := getJSON  "https://appletune.fundor333.com/api/commenti/"  .Params.slug  }}
 
 {{ range $index, $element := $data }}
-{{$element}}
 
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0 align-items-center">
