@@ -9,27 +9,54 @@
   <input type="hidden" id="id_post_url" name="post_url" value="{{ .Params.slug }}">
   <div class="form-group">
     <label>Name/Alias</label>
-    <input class="form-control" name="name" placeholder="Name/Alias" required>
+    <input class="form-control" name="name" id="id_name" placeholder="Name/Alias" required>
   </div>
   <div class="form-group">
     <label>Comment</label>
-    <textarea class="form-control" name="text" rows="5" required></textarea>
+    <textarea class="form-control" name="text" id="id_text" rows="5" required></textarea>
   </div>
 
   <br>
 
   <div class="form-group">
     <label>WebSite (Optional)</label>
-    <input class="form-control" name="website" placeholder="My magical comment">
+    <input class="form-control" name="website" id="id_website" placeholder="My magical comment">
   </div>
   <div class="form-group">
     <label>Twitter (Optional)</label>
-    <input class="form-control" name="twitter_account" placeholder="my-twitter-alias">
+    <input class="form-control" name="twitter_account" id="id_twitter_account" placeholder="my-twitter-alias">
   </div>
   <div class="form-group">
     <label>Github (Optional)</label>
-    <input class="form-control" name="github_account" placeholder="my-github-alias">
+    <input class="form-control" name="github_account" id="id_github_account" placeholder="my-github-alias">
   </div>
 
   <button type="submit" class="btn m-2 d-md-inline-block d-sm-none">Submit</button>
 </form>
+
+<script>
+  document.forms['commenti-form'].addEventListener('submit', (event) => {
+    event.preventDefault();
+    var formData = {
+      post_url: $("#id_post_url").val(),
+      name: $("#id_name").val(),
+      text: $("#id_text").val(),
+      website: $("#id_website").val(),
+      twitter_account: $("#id_twitter_account").val(),
+      github_account: $("#id_github_account").val(),
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "https://appletune.fundor333.com/api/commenti/add",
+      data: formData,
+      dataType: "json",
+      encode: true,
+    }).done(function (data) {
+      console.log(data);
+      window.location.href = '{{ .Permalink }}?comment=yes';
+    });
+
+  });
+
+</script>
