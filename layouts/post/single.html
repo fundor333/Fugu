@@ -13,6 +13,7 @@
     <a href='{{ .Permalink }}'>{{ .Title }}</a>
   </div>
 
+
   <hr>
   <br>
   <div class="container-fluid">
@@ -64,6 +65,9 @@ end }}
       class="share__link" title="Share on Twitter">share it on <i class="fa-brands fa-twitter"></i></a>
   </p>
   <hr>
+
+  {{- partial "comments.html" . -}}
+  <hr>
   {{ $related := .Site.RegularPages.Related . | first 3 }}
   {{ with $related }}
 
@@ -72,7 +76,6 @@ end }}
   {{ .Render "summary" }}
   {{ end }}
   {{ end }}
-  <hr>
-  {{ template "_internal/disqus.html" . }}
+
 </div>
 {{ end }}
