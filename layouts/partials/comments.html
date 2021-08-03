@@ -83,10 +83,19 @@ https://avatars.dicebear.com/api/bottts/fundor333.svg
       url: "http://appletune.fundor333.com/api/commenti/add",
       data: formData,
       dataType: "json",
+      callback: '?',
       encode: true,
-    }).done(function (data) {
-      console.log(data);
-      window.location.href = '{{ .Permalink }}?comment=yes';
+      datatype: 'application/json',
+
+      success: function (data) {
+        console.log(data);
+        window.location.href = '{{ .Permalink }}?comment=yes';
+      },
+      error: function (data) {
+        console.log(data);
+        window.location.href = '{{ .Permalink }}?comment=yes';
+      },
+
     });
 
   });
