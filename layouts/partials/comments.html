@@ -1,4 +1,4 @@
-{{ $data := getJSON  "http://localhost:8000/api/commenti/"  .Params.slug  }}
+{{ $data := getJSON  "https://appletune.fundor333.com/api/commenti/"  .Params.slug  }}
 
 {{ range $index, $element := $data }}
 
