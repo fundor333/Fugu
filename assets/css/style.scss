@@ -115,6 +115,12 @@ sup {
 	}
 }
 
+.card {
+	background-color: var(--color-background);
+	color: var(--color-font);
+	border: var(--color-font) 1px solid;
+}
+
 .dark,
 .light {
 	background-color: var(--color-font);
