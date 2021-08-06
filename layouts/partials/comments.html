@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title">{{$element.name}}</h5>
         <p class="card-text">{{$element.text}}</p>
-        <p class="card-text"> {{ dateFormat `2006-01-02 15:04` $element.added}} </p>
+        <p class="card-text"> {{$element.added}} </p>
         {{ if $element.website }}
         <a href="{{  $element.website }}" class="card-link"><i class="fad fa-link"></i></a>
         {{ end }}
