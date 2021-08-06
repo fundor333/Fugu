@@ -5,7 +5,8 @@
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0 align-items-center">
     <div class="col-md-4 align-middle">
-      <img src="https://icotar.com/avatar/{{$element.name}}" class="img-fluid rounded-start" alt="{{$element.name}}">
+      <img src="https://icotar.com/avatar/{{$element.name}}" height="40" width="40" class="img-fluid rounded-start"
+        alt="{{$element.name}}">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -16,10 +17,11 @@
         <a href="{{  $element.website }}" class="card-link"><i class="fad fa-link"></i></a>
         {{ end }}
         {{ if $element.twitter_account }}
-        <a href="{{  $element.twitter_account }}" class="card-link"><i class="fab fa-twitter"></i></a>
+        <a href="https://twitter.com/{{  $element.twitter_account }}" class="card-link"><i
+            class="fab fa-twitter"></i></a>
         {{ end }}
         {{ if $element.github_account }}
-        <a href="{{  $element.github_account }}" class="card-link"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/{{  $element.github_account }}" class="card-link"><i class="fab fa-github"></i></a>
         {{ end }}
       </div>
 
