@@ -53,7 +53,7 @@ a {
 
 
 body {
-	font-family: "DovesType-Regular", Georgia;
+	font-family: "DovesType-Regular", Georgia !important;
 	background-color: var(--color-background);
 	color: var(--color-font);
 	text-rendering: optimizeLegibility;
