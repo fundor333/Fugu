@@ -4,6 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Syne+Mono&display=swap');
 
+@font-face {
+	font-family: 'DovesType-Regular';
+	src: url('/fonts/DovesType-Regular.eot');
+	src: url('/fonts/DovesType-Regular.eot') format('embedded-opentype'),
+		url('/fonts/DovesType-Regular.woff2') format('woff2'),
+		url('/fonts/DovesType-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: 150% 300%
+}
+
 $f333_red_light: #990000;
 $f333_red_dark: #ff4137;
 $f333_dark: hsl(0, 0%, 12%);
@@ -42,9 +53,14 @@ a {
 
 
 body {
-	font-family: 'Playfair Display', serif;
+	font-family: "DovesType-Regular", Georgia;
 	background-color: var(--color-background);
 	color: var(--color-font);
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "kern"1;
+	font-feature-settings: "lnum"1;
+	font-kerning: normal;
+	font-size: 1.4rem;
 }
 
 blockquote {
@@ -85,6 +101,7 @@ sup {
 .btn {
 	background-color: var(--color-background);
 	color: var(--color-font);
+	font-size: 1.5rem;
 
 	&:hover {
 		background-color: var(--color-font);
@@ -137,6 +154,7 @@ sup {
 	border-color: var(--color-link);
 	margin: 1.5em 25px;
 	padding: 1px 10px;
+	font-size: 1rem;
 }
 
 .img-post {
