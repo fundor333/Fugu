@@ -26,7 +26,7 @@
   <div class="d-flex align-items-center justify-content-center">
     {{ $currentPage := . }}
     {{ range .Site.Data.social }}
-    <a href="{{ .url }}" class="btn">
+    <a rel="me" href="{{ .url }}" class="btn">
       <i class="fa-brands fa-{{ .identifier }}" aria-hidden="true">
       </i>
     </a>
