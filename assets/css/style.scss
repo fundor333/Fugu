@@ -74,7 +74,7 @@ blockquote {
 @for $i from 1 through 6 {
 	h#{$i} {
 		color: var(--color-link);
-		font-family: "DovesType-Regular", Georgia !important;
+		font-family: "DovesType-Regular", serif !important;
 	}
 }
 
@@ -103,6 +103,8 @@ sup {
 
 .btn {
 	background-color: var(--color-background);
+	font-family: "DovesType-Regular", serif !important;
+
 	color: var(--color-font);
 	font-size: 1.5rem;
 
