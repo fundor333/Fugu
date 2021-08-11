@@ -2,7 +2,7 @@
 @import "_syntax";
 @import "_tags";
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&family=Syne+Mono&display=swap');
 
 @font-face {
 	font-family: 'DovesType-Regular';
@@ -53,14 +53,13 @@ a {
 
 
 body {
-	font-family: "DovesType-Regular", Georgia !important;
+	font-family: 'Lexend', sans-serif !important;
 	background-color: var(--color-background);
 	color: var(--color-font);
 	text-rendering: optimizeLegibility;
 	font-feature-settings: "kern"1;
 	font-feature-settings: "lnum"1;
 	font-kerning: normal;
-	font-size: 1.4rem;
 }
 
 blockquote {
@@ -71,8 +70,12 @@ blockquote {
 	padding: 1px 10px;
 }
 
-h1 {
-	color: var(--color-link);
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		color: var(--color-link);
+		font-family: "DovesType-Regular", Georgia !important;
+	}
 }
 
 img {
