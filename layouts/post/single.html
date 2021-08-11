@@ -58,12 +58,19 @@ end }}
   <article class="flex flex-col px-3">
     {{ .Content | safeHTML }}
     <p>by {{ .Site.Author.name }}</p>
+    <hr>
+    <p class="text-center">If you liked this article,</p>
+    <p class="text-center"> please <a
+        href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via=fundor333"
+        class="a-post" title="Share on Twitter">share it on <i class="fa-brands fa-twitter"></i></a>
+    </p>
+    <p class="text-center">
+      or <a href="https://webmention.io/fundor333.com/webmention" class="a-post">webmention it</a>
+    </p>
   </article>
-  <hr>
-  <p class="text-center">If you liked this article, please <a
-      href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via=fundor333"
-      class="share__link" title="Share on Twitter">share it on <i class="fa-brands fa-twitter"></i></a>
-  </p>
+
+  <script id="s9-sdk" async defer content="330fd98586a04f91a3261ff6620cf1c7"
+    src="//cdn.social9.com/js/socialshare.min.js"></script>
   <hr>
 
   {{- partial "comments.html" . -}}
