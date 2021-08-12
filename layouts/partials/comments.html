@@ -31,13 +31,6 @@
 </div>
 {{end}}
 
-<script>
-  if (window.location.search.indexOf('comment=yes') > -1) {
-    alert('Thanks for the comment');
-  }
-
-</script>
-
 <form id="commenti-form">
   <input type="hidden" id="id_post_url" name="post_url" value="{{ .Params.slug }}">
   <div class="form-group">
@@ -67,34 +60,41 @@
   <button type="submit" class="btn m-2 d-md-inline-block d-sm-none">Submit</button>
 </form>
 
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
 <script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const config = {
+    apiKey: "AIzaSyDNuz8jJaiUyA5TkBsZ83Qoy7qSyf_EQ_c",
+    authDomain: "fundor333-77b0c.firebaseapp.com",
+    databaseURL: "https://fundor333-77b0c-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "fundor333-77b0c",
+    storageBucket: "fundor333-77b0c.appspot.com",
+    messagingSenderId: "250188864128"
+
+  };
+
+
   document.forms['commenti-form'].addEventListener('submit', (event) => {
     event.preventDefault();
-    var formData = {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(config);
+    }
+
+    var myRef = firebase.database().ref("commenti").push().set({
       post_url: $("#id_post_url").val(),
       name: $("#id_name").val(),
       text: $("#id_text").val(),
       website: $("#id_website").val(),
       twitter_account: $("#id_twitter_account").val(),
       github_account: $("#id_github_account").val(),
-    };
-
-    $.ajax({
-      type: "POST",
-      url: "https://appletune.fundor333.com/api/commenti/add",
-      data: formData,
-      dataType: "html",
-      success: function (data) {
-        console.log(data);
-        window.location.href = '{{ .Permalink }}?comment=yes';
-      },
-      error: function (data) {
-        console.log(data);
-        window.location.href = '{{ .Permalink }}?comment=yes';
-      },
-
     });
 
+
+    //window.location.href = '{{ .Permalink }}?comment=yes';
+    return alert('Thanks for the comment');
   });
 
 </script>
