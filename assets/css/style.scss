@@ -75,6 +75,11 @@ blockquote {
 	h#{$i} {
 		color: var(--color-link);
 		font-family: "DovesType-Regular", serif !important;
+
+		svg {
+			color: var(--color-font);
+
+		}
 	}
 }
 
