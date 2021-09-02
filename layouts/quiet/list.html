@@ -6,7 +6,7 @@
 
 {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
 
-<div class="row row-cols-1 row-cols-md-2 g-4 my-auto">
+<div class="row row-cols-1 g-4 my-auto">
   {{ range $paginator.Pages }}
   <div class="col">
     <a class="quiet" href="{{ .Permalink}}">

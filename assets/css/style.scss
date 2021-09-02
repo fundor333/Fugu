@@ -148,6 +148,10 @@ sup {
 	border: var(--color-font) 1px solid;
 }
 
+.container {
+	max-width: 1024px;
+}
+
 .dark,
 .light {
 	background-color: var(--color-font);
