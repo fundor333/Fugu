@@ -51,6 +51,10 @@ a {
 
 	&.footnote-ref {
 		color: var(--color-link);
+
+		&:hover {
+			color: var(--color-text);
+		}
 	}
 }
 
@@ -183,6 +187,7 @@ sup {
 	height: auto;
 }
 
+
 .twitter-tweet {
 	margin: auto;
 }
@@ -198,4 +203,19 @@ sup {
 
 #logo {
 	border-radius: 8px;
+}
+
+#TableOfContents {
+	ul {
+		padding: 0;
+		list-style: none;
+
+		a {
+			color: var(--color-link);
+
+			&:hover {
+				color: var(--color-text);
+			}
+		}
+	}
 }
