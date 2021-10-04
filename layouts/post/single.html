@@ -52,14 +52,12 @@ end }}
     </div>
     <div><i class="fad fa-pen-nib"></i> Word count {{.WordCount}}</div>
   </div>
-
   <br>
-
-  <div class="col-10 offset-1 text-center"> {{ .TableOfContents }}</div>
-
-
   <hr>
-
+  <div class="col-10 offset-1">
+    <div class="col-10 offset-1"> {{ .TableOfContents }}</div>
+  </div>
+  <hr>
   <br>
   <article class="flex flex-col px-3">
     {{ .Content | safeHTML }}

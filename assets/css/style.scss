@@ -42,7 +42,6 @@ a {
 
 	&.quiet-link {
 		color: var(--color-font);
-		text-decoration: none;
 
 		&:hover {
 			color: var(--color-font);
@@ -206,16 +205,13 @@ sup {
 }
 
 #TableOfContents {
-	ul {
-		padding: 0;
-		list-style: none;
 
-		a {
-			color: var(--color-link);
+	a {
+		color: var(--color-link);
 
-			&:hover {
-				color: var(--color-text);
-			}
+		&:hover {
+			color: var(--color-text);
 		}
 	}
+
 }
