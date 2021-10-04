@@ -48,6 +48,10 @@ a {
 			color: var(--color-font);
 		}
 	}
+
+	&.footnote-ref {
+		color: var(--color-link);
+	}
 }
 
 
