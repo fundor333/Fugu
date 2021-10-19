@@ -46,3 +46,6 @@
 {{ template "_internal/google_analytics.html" . }}
 
 {{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
+
+<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
