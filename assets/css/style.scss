@@ -222,6 +222,9 @@ sup {
 	z-index: 100;
 	line-height: 1.2em;
 
+	display: flex;
+	flex-direction: column;
+
 	.comments {
 		max-height: 20em;
 		overflow-x: hidden;
@@ -229,7 +232,6 @@ sup {
 		font-size: 80%;
 
 		li {
-			white-space: nowrap;
 			text-overflow: ellipsis;
 			overflow: hidden;
 
@@ -246,15 +248,16 @@ sup {
 	}
 
 	h2 {
-		font-size: medium;
-		margin: 0;
-		padding: 2px;
-		background: #ccc;
+		text-align: center;
 	}
 
 	.reacts {
 		img {
-			margin: 3px -1ex 1px 0;
+			margin: 3px 0ex 1px 0;
+		}
+
+		li {
+			float: left;
 		}
 	}
 
@@ -264,22 +267,17 @@ sup {
 		padding: 4px;
 	}
 
-	li {
-		text-indent: -1em;
-		padding-left: 1em;
-	}
 
 	a.reaction {
 		position: relative;
 		text-decoration: none;
 		text-shadow: 0px 0px 3px white;
 		margin-right: 0;
-		letter-spacing: -1ex;
+		letter-spacing: 1ex;
 		margin-right: 1ex;
 
 		img {
-			max-height: 1.3em;
-			margin-right: -1ex;
+			max-height: 3em;
 			border-radius: 25%;
 		}
 
@@ -288,8 +286,4 @@ sup {
 		}
 	}
 
-	img {
-		max-height: 1.2em;
-		margin-right: -1ex;
-	}
 }
