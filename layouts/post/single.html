@@ -77,6 +77,10 @@ end }}
     src="//cdn.social9.com/js/socialshare.min.js"></script>
   <hr>
 
+  <script src="/webmention.min.js" page-url="{{ .Permalink }}" async></script>
+  <div id="webmentions"></div>
+
+
   {{- partial "comments.html" . -}}
   <hr>
   {{ $related := .Site.RegularPages.Related . | first 3 }}
