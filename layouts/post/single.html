@@ -37,7 +37,8 @@
     <a class="btn tag-{{.}} m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
       {{ .}}
     </a>
-    <a class="btn tag-{{.}} m-2 d-md-inline-block d-sm-none d-none" href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+    <a class="btn tag-{{.}} m-2 d-md-inline-block d-sm-none d-none p-category"
+      href='{{ "tags" | absURL }}/{{ . | urlize }}'>
       <i class="fas fa-tags"></i> {{ .}}
     </a>
     {{ end }} {{ end }}
@@ -80,7 +81,7 @@ end }}
     src="//cdn.social9.com/js/socialshare.min.js"></script>
 
   <div id="webmentions" class="row">
-    <a href="/quiet" class="quiet-link d-none d-md-block p-3 p-category">
+    <a href="/quiet" class="quiet-link d-none d-md-block p-3">
       <h2><i class="fa-solid fa-dice-d12"></i></h2>
     </a>
   </div>
