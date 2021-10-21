@@ -7,7 +7,9 @@
     <a href="/quiet" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
   </h1>
   <br>
-  {{ .Content }}
+  <div class="p-note">
+    {{ .Content }}
+  </div>
 </div>
 {{ range  first 4 (where .Site.RegularPages "Section" "post")  }}
 
