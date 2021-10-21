@@ -45,6 +45,10 @@
   </div>
   <br>
   <div class="col-10 offset-1 text-center">
+    <img loading="lazy" src="{{ .Site.Params.image}}" alt="logo" class="img-fluid u-logo u-photo" width="60">
+    <p class="p-author h-card">by {{ .Site.Author.name }}</p>
+  </div>
+  <div class="col-10 offset-1 text-center">
     <div><i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt
 .ReadingTime
 7 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}{{
@@ -62,11 +66,8 @@ end }}
     <div class="col-10 offset-1"> {{ .TableOfContents }}</div>
   </div>
   <hr>
-  <br>
   <article class="flex flex-col px-3 e-content">
     {{ .Content | safeHTML }}
-    <p class="p-author h-card">by {{ .Site.Author.name }}</p>
-    <hr>
     <p class="text-center">If you liked this article,</p>
     <p class="text-center"> please <a
         href="https://twitter.com/intent/tweet?text={{ .Title }}&amp;url={{ .Permalink }}&amp;via=fundor333"
