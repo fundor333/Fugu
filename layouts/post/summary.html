@@ -1,11 +1,11 @@
 <div class="col-start-2 col-span-10">
-  <article class="flex flex-col items-center text-center">
+  <article class="flex flex-col items-center text-center h-entry">
     <a href="/quiet" class="quiet-link d-none d-md-block p-3">
       <h2><i class="fa-solid fa-dice-d12"></i></h2>
     </a>
 
     <a href="{{ .Permalink }}">
-      <h1 class="text-center py-2">{{ .Title }}</h1>
+      <h1 class="text-center p-name py-2">{{ .Title }}</h1>
     </a>
 
     <a href="{{ .Permalink }}">
@@ -18,7 +18,8 @@
       </div>
     </a>
 
-    <a href="{{ .Permalink }}" class="d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
+    <a href="{{ .Permalink }}"
+      class="p-summary d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
     <div class="d-flex align-items-center justify-content-center">
       <i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt
         .ReadingTime  }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i
@@ -26,8 +27,12 @@
       {{ end }}
       Reading time {{.ReadingTime}} minutes
     </div>
-    <div class="d-flex align-items-center justify-content-center pb-3">
+    <div class="d-flex align-items-center justify-content-center">
       <i class="fad fa-pen-nib"></i> Word count {{.WordCount}}
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center pb-3">
+      <p class="p-author h-card">{{ .Site.Author.name }}</p>
     </div>
 
     <div class="container text-center">

@@ -1,6 +1,6 @@
 {{ define "main"}}
-<div class="container-fluid">
-  <h1 class="text-center">
+<div class="container-fluid h-entry">
+  <h1 class="text-center p-name">
     <a href="/quiet" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
     {{ .Title }}
     <a href="/quiet" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
@@ -59,9 +59,9 @@ end }}
   </div>
   <hr>
   <br>
-  <article class="flex flex-col px-3">
+  <article class="flex flex-col px-3 e-content">
     {{ .Content | safeHTML }}
-    <p>by {{ .Site.Author.name }}</p>
+    <p class="p-author h-card">by {{ .Site.Author.name }}</p>
     <hr>
     <p class="text-center">If you liked this article,</p>
     <p class="text-center"> please <a
