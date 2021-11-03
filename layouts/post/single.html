@@ -63,7 +63,7 @@
     {{ $resource := imageConfig (add "/content/" $image.RelPermalink) }}
 
     <div class="col-10 offset-1 text-center">
-      <img loading="lazy" class="img-fluid lazy" src="{{ $image.Permalink }}" width="{{ $resource.Width }}"
+      <img loading="lazy" class="u-photo img-fluid lazy" src="{{ $image.Permalink }}" width="{{ $resource.Width }}"
         height="{{ $resource.Height }}" alt="Card image cap">
     </div>
 
