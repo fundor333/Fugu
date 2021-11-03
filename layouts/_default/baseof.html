@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default " en " }}" class="theme-dark">
 {{- partial "head.html" . -}}
+{{- block "more_head" . }}{{- end }}
 
 <body>
   <br>

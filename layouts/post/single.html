@@ -1,3 +1,28 @@
+{{ define "more_head"}}
+
+<script type="application/ld+json">
+  {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}"}}
+
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogArticle",
+    "headline": "{{ .Title }}",
+    "image": [
+      "{{ $image.Permalink }}",
+    ],
+    "datePublished": "{{ .Date | time.Format "2006-01-02 15:04:05+02:00"  }}",
+    "dateModified": "{{ .Date | time.Format "2006-01-02 15:04:05+02:00"  }}",
+    "author": [{
+      "@type": "Person",
+      "name": "Fundor333",
+      "url": "http://fundor333.com"
+    }]
+  }
+
+</script>
+{{ end }}
+
+
 {{ define "main"}}
 <div class="container-fluid h-entry">
   <h1 class="text-center p-name">
