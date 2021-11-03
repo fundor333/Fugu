@@ -5,10 +5,10 @@
 
   {
     "@context": "https://schema.org",
-    "@type": "BlogArticle",
+    "@type": "Article",
     "headline": "{{ .Title }}",
     "image": [
-      "{{ $image.Permalink }}",
+      "{{ $image.Permalink }}"
     ],
     "datePublished": "{{ .Date | time.Format "2006-01-02 15:04:05+02:00"  }}",
     "dateModified": "{{ .Date | time.Format "2006-01-02 15:04:05+02:00"  }}",
