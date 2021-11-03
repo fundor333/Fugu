@@ -3,67 +3,60 @@
 {{ if $src }}
 <picture>
 
-    <!-- AVIF -->
+  <!-- AVIF -->
 
-    {{ $tinyw := default "500x avif" }}
-    {{ $smallw := default "800x avif" }}
-    {{ $mediumw := default "1200x avif" }}
-    {{ $largew := default "1500x avif" }}
+  {{ $tinyw := default "500x avif" }}
+  {{ $smallw := default "800x avif" }}
+  {{ $mediumw := default "1200x avif" }}
+  {{ $largew := default "1500x avif" }}
 
-    {{ $data := newScratch }}
-    {{ $data.Set "tiny" ($src.Resize $tinyw) }}
-    {{ $data.Set "small" ($src.Resize $smallw) }}
-    {{ $data.Set "medium" ($src.Resize $mediumw) }}
-    {{ $data.Set "large" ($src.Resize $largew) }}
+  {{ $data := newScratch }}
+  {{ $data.Set "tiny" ($src.Resize $tinyw) }}
+  {{ $data.Set "small" ($src.Resize $smallw) }}
+  {{ $data.Set "medium" ($src.Resize $mediumw) }}
+  {{ $data.Set "large" ($src.Resize $largew) }}
 
-    {{ $tiny := $data.Get "tiny" }}
-    {{ $small := $data.Get "small" }}
-    {{ $medium := $data.Get "medium" }}
-    {{ $large := $data.Get "large" }}
+  {{ $tiny := $data.Get "tiny" }}
+  {{ $small := $data.Get "small" }}
+  {{ $medium := $data.Get "medium" }}
+  {{ $large := $data.Get "large" }}
 
-    <source media="(max-width: 376px)"
-        srcset="{{with $tiny.RelPermalink }}{{.}}{{ end }}">
+  <source media="(max-width: 376px)" srcset="{{with $tiny.RelPermalink }}{{.}}{{ end }}">
 
-    <source media="(max-width: 992px)"
-        srcset="{{with $small.RelPermalink }}{{.}}{{ end }}">
+  <source media="(max-width: 992px)" srcset="{{with $small.RelPermalink }}{{.}}{{ end }}">
 
-    <source media="(max-width: 1400px)"
-        srcset="{{with $medium.RelPermalink }}{{.}}{{ end }}">
+  <source media="(max-width: 1400px)" srcset="{{with $medium.RelPermalink }}{{.}}{{ end }}">
 
-    <source media="(min-width: 1600px)"
-        srcset="{{with $large.RelPermalink }}{{.}}{{ end }}">
+  <source media="(min-width: 1600px)" srcset="{{with $large.RelPermalink }}{{.}}{{ end }}">
 
-    <!-- WebP -->
+  <!-- WebP -->
 
-    {{ $tinyw := default "500x webp" }}
-    {{ $smallw := default "800x webp" }}
-    {{ $mediumw := default "1200x webp" }}
-    {{ $largew := default "1500x webp" }}
+  {{ $tinyw := default "500x webp" }}
+  {{ $smallw := default "800x webp" }}
+  {{ $mediumw := default "1200x webp" }}
+  {{ $largew := default "1500x webp" }}
 
-    {{ $data := newScratch }}
-    {{ $data.Set "tiny" ($src.Resize $tinyw) }}
-    {{ $data.Set "small" ($src.Resize $smallw) }}
-    {{ $data.Set "medium" ($src.Resize $mediumw) }}
-    {{ $data.Set "large" ($src.Resize $largew) }}
+  {{ $data := newScratch }}
+  {{ $data.Set "tiny" ($src.Resize $tinyw) }}
+  {{ $data.Set "small" ($src.Resize $smallw) }}
+  {{ $data.Set "medium" ($src.Resize $mediumw) }}
+  {{ $data.Set "large" ($src.Resize $largew) }}
 
-    {{ $tiny := $data.Get "tiny" }}
-    {{ $small := $data.Get "small" }}
-    {{ $medium := $data.Get "medium" }}
-    {{ $large := $data.Get "large" }}
+  {{ $tiny := $data.Get "tiny" }}
+  {{ $small := $data.Get "small" }}
+  {{ $medium := $data.Get "medium" }}
+  {{ $large := $data.Get "large" }}
 
-    <source media="(max-width: 376px)"
-        srcset="{{with $tiny.RelPermalink }}{{.}}{{ end }}">
+  <source media="(max-width: 376px)" srcset="{{with $tiny.RelPermalink }}{{.}}{{ end }}">
 
-    <source media="(max-width: 992px)"
-        srcset="{{with $small.RelPermalink }}{{.}}{{ end }}">
+  <source media="(max-width: 992px)" srcset="{{with $small.RelPermalink }}{{.}}{{ end }}">
 
-    <source media="(max-width: 1400px)"
-        srcset="{{with $medium.RelPermalink }}{{.}}{{ end }}">
+  <source media="(max-width: 1400px)" srcset="{{with $medium.RelPermalink }}{{.}}{{ end }}">
 
-    <source media="(min-width: 1600px)"
-        srcset="{{with $large.RelPermalink }}{{.}}{{ end }}">
+  <source media="(min-width: 1600px)" srcset="{{with $large.RelPermalink }}{{.}}{{ end }}">
 
 
-  <img class="img-post" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async" width="{{ $src.Width }}" height="{{ $src.Height }}" />
+  <img class="img-post u-photo" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async"
+    width="{{ $src.Width }}" height="{{ $src.Height }}" />
 </picture>
 {{end}}
