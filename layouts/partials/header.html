@@ -2,11 +2,12 @@
   <div>
     <div class="d-flex align-items-center justify-content-center h-card">
       <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
-        <img loading="lazy" src="{{ .Site.Params.image}}" alt="logo" class="img-fluid u-logo u-photo" width="60">
+        <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}" class="img-fluid u-logo u-photo"
+          width="60">
       </a>
     </div>
     <div class="d-flex align-items-center justify-content-center d-none d-md-block">
-      <a class="u-url p-name" rel="me" href="{{ .Site.BaseURL }}">
+      <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
         <h1 class="d-flex align-items-center justify-content-center p-name">{{ .Site.Title }}</h1>
       </a>
     </div>
