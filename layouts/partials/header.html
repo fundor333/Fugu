@@ -1,16 +1,15 @@
 <header>
-  <div>
-    <div class="d-flex align-items-center justify-content-center h-card">
-      <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
-        <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}" class="img-fluid u-logo u-photo"
-          width="60">
-      </a>
-    </div>
-    <div class="d-flex align-items-center justify-content-center d-none d-md-block">
-      <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
-        <h1 class="d-flex align-items-center justify-content-center p-name">{{ .Site.Title }}</h1>
-      </a>
-    </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg fixed-top">
+    <a class="u-url navbar-brand mx-auto" rel=" me" href="{{ .Site.BaseURL }}">
+      <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}" class="img-fluid u-logo u-photo"
+        width="60">
+    </a>
+  </nav>
+
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
+      <h1 class="d-flex align-items-center justify-content-center p-name">{{ .Site.Title }}</h1>
+    </a>
   </div>
 
   <div class="d-flex align-items-center justify-content-center">
