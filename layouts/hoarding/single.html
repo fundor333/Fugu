@@ -18,9 +18,11 @@
   <div class="col-sm-9 offset-sm-1">
     {{ range .elements }}
     <p>
-      <a href="{{.url}}" class="offset-1">
-        {{.name}}
-      </a>
+      <div class="h-entry">
+        <a href="{{.url}}" class="offset-1 u-bookmark-of h-cite">
+          {{.name}}
+        </a>
+      </div>
     </p>
     {{end}}
   </div>
