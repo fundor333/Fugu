@@ -1,5 +1,22 @@
 {{ define "main" }}
+<script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL }}"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quiet",
+      "item": "{{ .Permalink }}"
+    }]
+  }]
 
+</script>
 <h2 class="text-center"><i class="fa-solid fa-alien-8bit"></i> {{.Title}} <i class="fa-solid fa-alien-8bit"></i></h2>
 <hr>
 {{ .Content }}

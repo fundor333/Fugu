@@ -6,6 +6,25 @@
   <a href="/quiet" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
 </h1>
 
+<script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL }}"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hoarding",
+      "item": "{{ .Permalink }}"
+    }]
+  }]
+
+</script>
+
 {{ range $.Site.Data.hoarding }}
 
 {{ range .types }}
