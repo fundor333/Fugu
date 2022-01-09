@@ -45,11 +45,19 @@
 {{ define "main"}}
 <div class="container-fluid h-entry">
   <h1 class="text-center p-name">
-    <a href="/quiet" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
-    {{ .Title }}
-    <a href="/quiet" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
+    <div class="row">
+      <div class="col-1 text-left">
+        <a href="/quiet" class="quiet-link"> <i class="fa-solid fa-dice-d12"></i></a>
+      </div>
+      <div class="col">
+        {{ .Title }}
+      </div>
+      <div class="col-1">
+        <a href="/quiet" class="quiet-link"> <i class="fa-solid fa-dice-d12"></i></a>
+      </div>
+    </div>
   </h1>
-  <hr>
+  <br>
   <div class="container-fluid text-center">
 
     <a href="{{ .Site.BaseURL }}">home</a>
@@ -58,7 +66,7 @@
   </div>
 
   <hr>
-  <div class="row">
+  <div>
     <div class="container-fluid row text-center">
       <div class="col-1">
         {{ with .PrevInSection }}
@@ -70,12 +78,12 @@
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}
       </div>
-      <div class="col-5 end-100">
+      <div class="col-5">
         {{ with .NextInSection }}
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         {{ end }}
       </div>
-      <div class="col-1 end-100">
+      <div class="col-1">
         {{ with .NextInSection }}
         <a href="{{ .Permalink }}"><i class="fa-duotone fa-right-long"></i></a>
         {{ end }}
