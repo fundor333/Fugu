@@ -92,7 +92,7 @@
 
     <div class="container-fluid  text-justify">
       <br>
-      {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}" }}
+      {{ $image := .Resources.GetMatch "{cover.webp,cover.jpg,cover.png,cover.jpeg}" }}
       {{ $resource := imageConfig (add "/content/" $image.RelPermalink) }}
 
       <div class="col-10 offset-1 text-center">

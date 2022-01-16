@@ -5,10 +5,10 @@
 
   <!-- AVIF -->
 
-  {{ $tinyw := default "500x avif" }}
-  {{ $smallw := default "800x avif" }}
-  {{ $mediumw := default "1200x avif" }}
-  {{ $largew := default "1500x avif" }}
+  {{ $tinyw := default "500x webp" }}
+  {{ $smallw := default "800x webp" }}
+  {{ $mediumw := default "1200x webp" }}
+  {{ $largew := default "1500x webp" }}
 
   {{ $data := newScratch }}
   {{ $data.Set "tiny" ($src.Resize $tinyw) }}

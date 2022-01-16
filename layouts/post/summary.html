@@ -9,9 +9,8 @@
     </a>
 
     <a href="{{ .Permalink }}">
-      {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}" }}
+      {{ $image := .Resources.GetMatch "{cover.webp,cover.jpg,cover.png,cover.jpeg}" }}
       {{ $resource := imageConfig (add "/content/" $image.RelPermalink) }}
-
       <div class="col-10 offset-1 text-center">
         <img loading="lazy" class="img-fluid lazy" src="{{ $image.Permalink }}" width="{{ $resource.Width }}"
           height="{{ $resource.Height }}" alt="Card image cap">
