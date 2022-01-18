@@ -1,54 +1,73 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg fixed-top">
-    <a class="u-url navbar-brand mx-auto" rel=" me" href="{{ .Site.BaseURL }}">
-      <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}" class="img-fluid u-logo u-photo"
-        width="60">
-    </a>
-  </nav>
+<div class="sticky-top">
+  <br>
 
-  <div class="d-flex align-items-center justify-content-center mt-5">
-    <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
-      <h1 class="d-flex align-items-center justify-content-center p-name">{{ .Site.Title }}</h1>
+  <div class="offset-3 offset-md-2  row">
+    <a class="u-url" rel=" me" href="{{ .Site.BaseURL }}">
+      <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}"
+        class="img-fluid u-logo u-photo  d-flex align-items-center justify-content-center" width="120">
     </a>
   </div>
 
-  <div class="d-flex align-items-center justify-content-center">
-    <a href="/quiet" class="quiet-link d-none d-md-block px-3"> <i class="fa-solid fa-dice-d12"></i></a>
+  <div class="offset-3 offset-md-2  row d-flex align-items-center justify-content-center">
+    <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
+      <h1 class="p-name align-items-center justify-content-center">{{ .Site.Title }}</h1>
+    </a>
+  </div>
+  <hr>
 
+  <div class="offset-3 offset-md-2 col-6 col-md-8  row d-flex align-items-center justify-content-center">
+    <p class="align-middle">{{ .Site.Params.description }}</p>
+    <button class="btn light" style="display:none" onclick="changeThemeToLight()">
+      <div class="fa-theme">
+        <i class="fa-duotone fa-starfighter"></i>
+      </div>
+    </button>
+    <button class="btn dark" style="display:none" onclick="changeThemeToDark()">
+      <div class="fa-theme">
+        <i class="fa-duotone fa-starfighter-twin-ion-engine-advanced"></i>
+      </div>
+    </button>
+  </div>
 
+  <div class="offset-4 col-4">
+
+  </div>
+  <hr>
+
+  <div class="offset-3 offset-md-2  row col-8">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <a class="block btn {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
-      href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    <a class="b2 col-6 col-xs-12 col-md-12 col-xl-6 {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+      href="{{ .URL }}" title="{{ .Title }}">
+      <nobr><i class="fa-duotone fa-dice-d20"></i> {{ .Title }}</nobr>
+    </a>
     {{ end }}
-    <a href="/quiet" class="quiet-link d-none d-md-block px-3"> <i class="fa-solid fa-dice-d12"></i></a>
-
   </div>
+  <hr>
 
-  <div class="d-flex align-items-center justify-content-center">
+  <div class="offset-3 offset-md-2  row col-8">
     {{ $currentPage := . }}
     {{ range .Site.Data.social }}
-    <a rel="me" href="{{ .url }}" class="btn">
+    <a rel="me" href="{{ .url }}" class="btn col-4">
       <i class="fa-brands fa-{{ .identifier }}" aria-hidden="true">
       </i>
     </a>
     {{ end }}
   </div>
-
-  <div class="d-flex align-items-center justify-content-center">
-    <a href='https://webring.recurse.com' target='_blank' class="btn">
+  <div class="offset-3 offset-md-2  row col-8">
+    <a href='https://webring.recurse.com' target='_blank' class="btn col-4">
       <img loading="lazy" src='https://webring.recurse.com/icon.png' width="30" height="33" />
     </a>
-    <a href="/quiet" class="quiet-link d-none d-md-block px-3"> <i class="fa-solid fa-dice-d12"></i></a>
-    <a href='https://webring.xxiivv.com/#random' target='_blank' class="btn">
+    <a href="/quiet" class="quiet-link col-4"> </a>
+    <a href='https://webring.xxiivv.com/#random' target='_blank' class="btn col-4">
       <img loading="lazy" width=" 30" height="33" src='https://webring.xxiivv.com/icon.white.svg' />
     </a>
   </div>
 
   {{- partial "authentication.html" . -}}
+  <hr>
 
-</header>
-
+</div>
 
 <script>
   const changeThemeToDark = () => {

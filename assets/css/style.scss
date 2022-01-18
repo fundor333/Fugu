@@ -95,6 +95,10 @@ blockquote {
 	}
 }
 
+hr {
+	height: 1px !important;
+}
+
 img {
 	&.img-fluid {
 		max-width: 75%;
@@ -212,6 +216,9 @@ sup {
 	height: auto;
 }
 
+.sticky-top {
+	margin-right: 1rem;
+}
 
 .twitter-tweet {
 	margin: auto;
