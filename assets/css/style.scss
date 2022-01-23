@@ -2,7 +2,7 @@
 @import "_syntax";
 @import "_tags";
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend&family=Syne+Mono&family=Vujahday+Script&display=swap');
 
 @font-face {
 	font-family: 'DovesType-Regular';
@@ -327,4 +327,17 @@ div.webmention__content {
 
 a.reaction:hover {
 	border-bottom: none
+}
+
+
+.e-content {
+	&::first-letter {
+		font-size: 5.15em;
+		font-family: 'Kanzlei';
+		padding-right: 3px;
+		float: left;
+		color: var(--color-link);
+		text-indent: 0;
+		line-height: .8em;
+	}
 }
