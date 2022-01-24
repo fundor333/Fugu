@@ -28,6 +28,7 @@ $f333_light_transparent: hsla(0, 0%, 76%, 0.8);
 	--color-background: #{$f333_light};
 	--color-link: #{$f333_red_light};
 	--color-background-transparent: #{$f333_light_transparent};
+	--color-border: #{$f333_dark};
 }
 
 .theme-dark {
@@ -35,6 +36,7 @@ $f333_light_transparent: hsla(0, 0%, 76%, 0.8);
 	--color-background: #{$f333_dark};
 	--color-link: #{$f333_red_dark};
 	--color-background-transparent: #{$f333_dark_transparent};
+	--color-border: #{$f333_light};
 }
 
 a {
@@ -96,7 +98,11 @@ blockquote {
 }
 
 hr {
-	height: 1px !important;
+	border-width: 1px;
+	border-color: var(--color-border);
+	border-style: dotted;
+	background-color: transparent;
+	opacity: 100%;
 }
 
 img {
@@ -340,4 +346,18 @@ a.reaction:hover {
 		text-indent: 0;
 		line-height: .8em;
 	}
+}
+
+
+.with-colums {
+	border: 0px;
+
+
+	@include media-breakpoint-up(sm) {
+		border-left: 1px;
+		border-right: 1px;
+		border-color: var(--color-border);
+		border-style: dotted;
+	}
+
 }

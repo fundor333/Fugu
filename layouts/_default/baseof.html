@@ -4,23 +4,30 @@
 {{- block "more_head" . }}{{- end }}
 
 <body class="container-fluid">
-  <br>
+  <hr>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-lg-3 col-xl-3">
         {{- partial "header.html" . -}}
+        <div class="d-block d-lg-none">
+          <hr>
+          {{- partial "social.html" . -}}
+        </div>
       </div>
-      <div id="content" class="col-md-9 col-lg-9 col-xl-9">
+      <div id="content" class="with-colums col-md-9 col-lg-6 col-xl-6">
         <br>
         {{- block "main" . }}{{- end }}
-        <hr>
+      </div>
+      <div class="d-none d-lg-block  col-lg-3 col-xl-3">
+        {{- partial "social.html" . -}}
       </div>
     </div>
   </div>
-
+  <hr>
   <div class="container">
     {{- partial "footer.html" . -}}
   </div>
+  <hr>
   {{- partial "script.html" . -}}
 </body>
 

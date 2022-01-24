@@ -1,0 +1,34 @@
+<div class="sticky-top">
+  <br>
+  <div class="offset-2 row col-8">
+    {{ $currentPage := . }}
+    {{ range .Site.Data.social }}
+    <a rel="me" href="{{ .url }}" class="btn col-4">
+      <i class="fa-brands fa-{{ .identifier }}" aria-hidden="true">
+      </i>
+    </a>
+    {{ end }}
+  </div>
+
+  <div class="offset-2 row col-8">
+    <a href='https://webring.recurse.com' target='_blank' class="btn col-4">
+      <img loading="lazy" src='https://webring.recurse.com/icon.png' width="30" height="33" />
+    </a>
+    <a href="/quiet" class="quiet-link col-4"> </a>
+    <a href='https://webring.xxiivv.com/#random' target='_blank' class="btn col-4">
+      <img loading="lazy" width=" 30" height="33" src='https://webring.xxiivv.com/icon.white.svg' />
+    </a>
+  </div>
+
+  <hr>
+
+  <div class="offset-3  row col-8">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <a class="b2 col-12 {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+      href="{{ .URL }}" title="{{ .Title }}">
+      <nobr><i class="fa-duotone fa-dice-d20"></i> {{ .Title }}</nobr>
+    </a>
+    {{ end }}
+  </div>
+</div>
