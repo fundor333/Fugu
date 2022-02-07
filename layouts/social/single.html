@@ -1,0 +1,7 @@
+{{ define "more_head"}}
+{{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}"}}
+{{ end }}
+
+{{ define "main"}}
+{{ .Render "summary" }}
+{{ end }}

@@ -1,0 +1,20 @@
+<div class="col-start-2 col-span-10">
+  <article class="flex flex-col items-center text-center h-entry">
+    <a href="/quiet" class="quiet-link d-none d-md-block p-3">
+      <h2><i class="fa-solid fa-dice-d12"></i></h2>
+    </a>
+
+    <a href="{{ .Permalink }}">
+      <h1 class="text-center p-name py-2">
+        {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}{{ end }}
+        {{ if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}{{ end }}
+        {{ if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Liked{{ end }}
+        {{ if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmarked{{ end }}
+        {{ if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost{{ end }}
+      </h1>
+      <p></p>
+      <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
+      {{ .Content | safeHTML }}
+    </a>
+  </article>
+</div>
