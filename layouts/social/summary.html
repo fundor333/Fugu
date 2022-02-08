@@ -1,4 +1,4 @@
-<div class="col-start-2 col-span-10 h-entry">
+<div class="col-start-2 col-span-10">
   <article class="flex flex-col items-center text-center h-entry">
     <a class="u-url u-uid" href="{{ .Permalink }}">
       <h1 class="text-center p-name py-2">
@@ -16,17 +16,17 @@
     {{ .Content | safeHTML }}
     {{ if .Param "mf-bookmark-of" }}
     {{ range  .Param "mf-bookmark-of"}}
-    <a class="u-like-of" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+    <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
     {{ end }}
     {{ end }}
     {{ if .Param "mf-like-of" }}
     {{ range  .Param "mf-like-of"}}
-    <a class="u-like-of" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+    <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
     {{ end }}
     {{ end }}
     {{ if .Param "mf-in-reply-to" }}
     {{ range  .Param "mf-in-reply-to"}}
-    <a class="u-in-reply-to" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+    <a class="u-in-reply-to h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
     {{ end }}
     {{ end }}
     {{ with .Params.tags }}
