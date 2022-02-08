@@ -1,13 +1,13 @@
 <div class="col-start-2 col-span-10 h-entry">
   <article class="flex flex-col items-center text-center h-entry">
-
-    <a href="{{ .Permalink }}">
+    <a class="u-url u-uid" href="{{ .Permalink }}">
       <h1 class="text-center p-name py-2">
         {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
         {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
         {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Liked
         {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmarked
         {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
+        {{ else if .Param "mf-in-reply-to" }}<i class="fa-solid fa-reply"></i> Response
         {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
       </h1>
     </a>
@@ -21,6 +21,11 @@
     {{ if .Param "mf-like-of" }}
     {{ range  .Param "mf-like-of"}}
     <a class="u-like-of" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+    {{ end }}
+    {{ end }}
+    {{ if .Param "mf-in-reply-to" }}
+    {{ range  .Param "mf-in-reply-to"}}
+    <a class="u-in-reply-to" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
     {{ end }}
     {{ end }}
     </a>
