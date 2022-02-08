@@ -12,9 +12,8 @@
         {{ if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmarked{{ end }}
         {{ if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost{{ end }}
       </h1>
-      <p></p>
+    </a>
       <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
       {{ .Content | safeHTML }}
-    </a>
   </article>
 </div>
