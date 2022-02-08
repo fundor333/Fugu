@@ -6,20 +6,21 @@
 
     <a href="{{ .Permalink }}">
       <h1 class="text-center p-name py-2">
-        {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}{{ end }}
-        {{ if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}{{ end }}
-        {{ if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Liked{{ end }}
-        {{ if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmarked{{ end }}
-        {{ if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost{{ end }}
+        {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
+        {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
+        {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Liked
+        {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmarked
+        {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
+        {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
       </h1>
     </a>
-      <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
-      {{ .Content | safeHTML }}
-      {{ if .Param "mf-bookmark-of" }}
-      {{ range  .Param "mf-bookmark-of"}}
-      <a class="a-post" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-      {{ end }}
-      {{ end }}
+    <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
+    {{ .Content | safeHTML }}
+    {{ if .Param "mf-bookmark-of" }}
+    {{ range  .Param "mf-bookmark-of"}}
+    <a class="a-post" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+    {{ end }}
+    {{ end }}
     </a>
   </article>
 </div>
