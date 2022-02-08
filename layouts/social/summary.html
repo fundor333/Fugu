@@ -1,42 +1,48 @@
 <div class="col-start-2 col-span-10">
   <article class="flex flex-col items-center text-center h-entry">
-    <a class="u-url u-uid" href="{{ .Permalink }}">
-      <h1 class="text-center p-name py-2">
-        {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
-        {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
-        {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i>
-        {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i>
-        {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
-        {{ else if .Param "mf-in-reply-to" }}<i class="fa-solid fa-reply"></i> Response
-        {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
-        {{ .Title }}
-      </h1>
-    </a>
-    <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
-    {{ .Content | safeHTML }}
-    {{ if .Param "mf-bookmark-of" }}
-    {{ range  .Param "mf-bookmark-of"}}
-    <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-    {{ end }}
-    {{ end }}
-    {{ if .Param "mf-like-of" }}
-    {{ range  .Param "mf-like-of"}}
-    <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-    {{ end }}
-    {{ end }}
-    {{ if .Param "mf-in-reply-to" }}
-    {{ range  .Param "mf-in-reply-to"}}
-    <a class="u-in-reply-to h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-    {{ end }}
-    {{ end }}
-    {{ with .Params.tags }}
-    {{ range sort . }}
-    <p class="btn category m-2 d-md-none ">
-      <i class="fa-duotone fa-map-pin"></i>
-      {{ .}}
-    </p>
-    {{ end }}
-    {{ end }}
+    <div class="container text-center">
+      <a class="u-url u-uid" href="{{ .Permalink }}">
+        <h1 class="text-center p-name py-2">
+          {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
+          {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
+          {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i>
+          {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i>
+          {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
+          {{ else if .Param "mf-in-reply-to" }}<i class="fa-solid fa-reply"></i> Response
+          {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
+          {{ .Title }}
+        </h1>
+      </a>
+      <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
+      {{ .Content | safeHTML }}
+      {{ if .Param "mf-bookmark-of" }}
+      {{ range  .Param "mf-bookmark-of"}}
+      <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+      {{ end }}
+      {{ end }}
+      {{ if .Param "mf-like-of" }}
+      {{ range  .Param "mf-like-of"}}
+      <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+      {{ end }}
+      {{ end }}
+      {{ if .Param "mf-in-reply-to" }}
+      {{ range  .Param "mf-in-reply-to"}}
+      <a class="u-in-reply-to h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+      {{ end }}
+      {{ end }}
+    </div>
+    <div class="container text-center">
+      {{ with .Params.tags }}
+      {{ range sort . }}
+      <a class="btn category m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+        {{ .}}
+      </a>
+      <a class="btn category m-2 d-md-inline-block d-sm-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+        <i class="fa-duotone fa-map-pin"></i> {{ .}}
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
     </a>
   </article>
 </div>
