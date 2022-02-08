@@ -1,4 +1,4 @@
-<div class="col-start-2 col-span-10">
+<div class="col-start-2 col-span-10 h-entry">
   <article class="flex flex-col items-center text-center h-entry">
     <a href="/quiet" class="quiet-link d-none d-md-block p-3">
       <h2><i class="fa-solid fa-dice-d12"></i></h2>
@@ -15,6 +15,11 @@
       <p></p>
       <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
       {{ .Content | safeHTML }}
+      {{ if .Param "mf-bookmark-of" }}
+      {{ range  .Param "mf-bookmark-of"}}
+      <a class="a-post" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+      {{ end }}
+      {{ end }}
     </a>
   </article>
 </div>
