@@ -3,32 +3,31 @@
   <div class="offset-2 row col-8">
     {{ $currentPage := . }}
     {{ range .Site.Data.social }}
-    <a rel="me" href="{{ .url }}" class="btn col-4">
+    <a rel="me" href="{{ .url }}" class="btn col-3">
       <i class="fa-brands fa-{{ .identifier }}" aria-hidden="true">
       </i>
     </a>
     {{ end }}
-  </div>
 
-  <div class="offset-2 row col-8">
-    <a href='https://webring.recurse.com' target='_blank' class="btn col-4">
+    <a href='https://webring.recurse.com' target='_blank' class="btn col-3">
       <img loading="lazy" src='https://webring.recurse.com/icon.png' width="30" height="33" />
     </a>
-    <a href="/quiet" class="quiet-link col-4"> </a>
-    <a href='https://webring.xxiivv.com/#random' target='_blank' class="btn col-4">
+    <a href='https://webring.xxiivv.com/#random' target='_blank' class="btn col-3">
       <img loading="lazy" width=" 30" height="33" src='https://webring.xxiivv.com/icon.white.svg' />
     </a>
   </div>
 
   <hr>
 
-  <div class="offset-3  row col-8">
+  <div class="row offset-sm-2">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <a class="b2 col-12 {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
+    <a class="b2 col-sm-2 col-4 {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}"
       href="{{ .URL }}" title="{{ .Title }}">
-      <nobr><i class="fa-duotone fa-dice-d20"></i> {{ .Title }}</nobr>
+      <nobr>{{ .Title }}</nobr>
     </a>
     {{ end }}
   </div>
+
+  <hr>
 </div>

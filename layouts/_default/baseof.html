@@ -4,22 +4,16 @@
 {{- block "more_head" . }}{{- end }}
 
 <body class="container-fluid">
-  <hr>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3 col-lg-3 col-xl-3">
+      <div class="row col-md-8 offset-md-2">
         {{- partial "header.html" . -}}
-        <div class="d-block d-lg-none">
-          <hr>
-          {{- partial "social.html" . -}}
-        </div>
+        {{- partial "social.html" . -}}
+        <br>
       </div>
-      <div id="content" class="with-colums col-md-9 col-lg-6 col-xl-6">
+      <div id="content" class="row col-md-8 offset-md-2">
         <br>
         {{- block "main" . }}{{- end }}
-      </div>
-      <div class="d-none d-lg-block  col-lg-3 col-xl-3">
-        {{- partial "social.html" . -}}
       </div>
     </div>
   </div>
@@ -27,7 +21,6 @@
   <div class="container">
     {{- partial "footer.html" . -}}
   </div>
-  <hr>
   {{- partial "script.html" . -}}
 </body>
 

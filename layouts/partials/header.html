@@ -1,34 +1,37 @@
-<div class="sticky-top">
+<div>
   <br>
 
-  <div class="offset-3 offset-md-2  row">
+  <div class="offset-3 offset-sm-5 row">
     <a class="u-url" rel=" me" href="{{ .Site.BaseURL }}">
       <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}"
-        class="img-fluid u-logo u-photo  d-flex align-items-center justify-content-center" width="120">
+        class="img-fluid u-logo u-photo d-flex align-items-center justify-content-center" width="120">
     </a>
   </div>
 
-  <div class="offset-3 offset-md-2  row d-flex align-items-center justify-content-center">
+  <div class="offset-3 offset-sm-5 row d-flex align-items-center justify-content-center">
     <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
       <h1 class="p-name align-items-center justify-content-center">
         <nobr>{{ .Site.Title }}</nobr>
       </h1>
     </a>
   </div>
-  <hr>
 
-  <div class="offset-3 offset-md-2 col-6 col-md-8  row d-flex align-items-center justify-content-center">
+  <div class="offset-2 offset-sm-4 row d-flex align-items-center justify-content-center">
     <p class="align-middle">{{ .Site.Params.description }}</p>
-    <button class="btn light" style="display:none" onclick="changeThemeToLight()">
-      <div class="fa-theme">
-        <i class="fa-duotone fa-starfighter"></i>
-      </div>
-    </button>
-    <button class="btn dark" style="display:none" onclick="changeThemeToDark()">
-      <div class="fa-theme">
-        <i class="fa-duotone fa-starfighter-twin-ion-engine-advanced"></i>
-      </div>
-    </button>
+  </div>
+  <div class="offset-4 row d-flex align-items-center justify-content-center">
+    <div>
+      <button class="btn light offset-1 col-4" style="display:none" onclick="changeThemeToLight()">
+        <div class="fa-theme">
+          <i class="fa-duotone fa-starfighter"></i>
+        </div>
+      </button>
+      <button class="btn dark offset-1 col-4" style="display:none" onclick="changeThemeToDark()">
+        <div class="fa-theme">
+          <i class="fa-duotone fa-starfighter-twin-ion-engine-advanced"></i>
+        </div>
+      </button>
+    </div>
   </div>
 
   {{- partial "authentication.html" . -}}
