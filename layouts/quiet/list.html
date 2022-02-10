@@ -19,7 +19,9 @@
 </script>
 <h2 class="text-center"><i class="fa-solid fa-alien-8bit"></i> {{.Title}} <i class="fa-solid fa-alien-8bit"></i></h2>
 <hr>
-{{ .Content }}
+<div class="e-content">
+  {{ .Content }}
+</div>
 
 {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
 

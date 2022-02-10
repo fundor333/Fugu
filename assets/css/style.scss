@@ -1,6 +1,5 @@
 @import "scss/bootstrap.scss";
 @import "_syntax";
-@import "_tags";
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend&family=Syne+Mono&family=Vujahday+Script&display=swap');
 
@@ -137,28 +136,26 @@ sup {
 		color: var(--color-background);
 	}
 
-	@each $a,
-	$b,
-	$c in $tags-list {
-		&.tag-#{$a} {
 
-			margin-top: 2px;
-			margin-bottom: 2px;
-			border: 2px solid;
-			border-color: var(--color-background);
+	&.tag {
 
-			&:hover {
-				background-color: var(--color-background);
-				color: $b;
-				border-color: $b;
-			}
+		margin-top: 2px;
+		margin-bottom: 2px;
+		border: 2px solid;
+		border-color: var(--color-font);
 
-			background-color: $b;
-			color: $f333_dark;
+		&:hover {
+			background-color: var(--color-background);
+			color: var(--color-font);
+			border-color: var(--color-font);
 		}
 
-
+		background-color: var(--color-font);
+		color: $f333_dark;
 	}
+
+
+
 
 	&.category {
 

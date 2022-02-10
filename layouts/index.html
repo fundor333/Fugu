@@ -7,9 +7,9 @@
   </h1>
   <br>
   <div class="row">
-    <p class="p-note">
+    <div class="p-note e-content">
       {{ .Content }}
-    </p>
+    </div>
   </div>
 </div>
 {{ range  first 4 (where .Site.RegularPages "Section" "post")  }}
