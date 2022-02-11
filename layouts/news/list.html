@@ -1,0 +1,26 @@
+{{ define "main" }}
+<h2 class="text-center"><i class="fa-solid fa-alien-8bit"></i> {{.Title}} <i class="fa-solid fa-alien-8bit"></i></h2>
+<hr>
+<div class="e-content">
+  {{ .Content }}
+</div>
+
+{{ $paginator := .Paginate ( .Site.Pages ) }}
+
+<div class="row row-cols-1 g-4 my-auto">
+  {{ range $paginator.Pages }}
+  <div class="col">
+    <a class="quiet" href="{{ .Permalink}}">
+      <div>
+        {{ .Render "summary" }}
+      </div>
+    </a>
+  </div>
+  {{ end }}
+</div>
+
+<hr>
+{{ partial "paginator.html" . }}
+
+
+{{ end }}

@@ -108,23 +108,16 @@
     <br>
     <div class="container text-center">
       {{ range .Params.categories }}
-      <a class="btn category m-2 d-md-none " href='{{ "categories" | absURL }}/{{ . | urlize }}'>
-        {{ .}}
-      </a>
-      <a class="btn category m-2 d-md-inline-block d-sm-none " href='{{ "categories" | absURL }}/{{ . | urlize }}'>
+      <btn class="btn m-2">
         <i class="fa-duotone fa-map-pin"></i> {{ .}}
-      </a>
+      </btn>
       {{ end }}
     </div>
     <div class="container text-center">
       {{ with .Params.tags }} {{ range sort . }}
-      <a class="btn tag-{{.}} m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
-        {{ .}}
-      </a>
-      <a class="btn tag-{{.}} m-2 d-md-inline-block d-sm-none d-none p-category"
-        href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+      <btn class="btn m-2">
         <i class="fas fa-tags"></i> {{ .}}
-      </a>
+      </btn>
       {{ end }} {{ end }}
 
       {{ with .Params.meta }} {{ range sort . }}

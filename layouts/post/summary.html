@@ -10,11 +10,13 @@
 
     <a href="{{ .Permalink }}">
       {{ $image := .Resources.GetMatch "{cover.webp,cover.jpg,cover.png,cover.jpeg}" }}
+      {{if  $image }}
       {{ $resource := imageConfig (add "/content/" $image.RelPermalink) }}
       <div class="col-10 offset-1 text-center">
         <img loading="lazy" class="img-fluid lazy" src="{{ $image.Permalink }}" width="{{ $resource.Width }}"
           height="{{ $resource.Height }}" alt="Card image cap">
       </div>
+      {{ end }}
     </a>
 
     <a href="{{ .Permalink }}"
@@ -36,23 +38,17 @@
 
     <div class="container text-center">
       {{ range .Params.categories }}
-      <a class="btn category m-2 d-md-none " href='{{ "categories" | absURL }}/{{ . | urlize }}'>
-        {{ .}}
-      </a>
-      <a class="btn category m-2 d-md-inline-block d-sm-none " href='{{ "categories" | absURL }}/{{ . | urlize }}'>
+      <btn class="btn m-2">
         <i class="fa-duotone fa-map-pin"></i> {{ .}}
-      </a>
+      </btn>
       {{ end }}
     </div>
 
     <div class="container text-center">
       {{ with .Params.tags }} {{ range sort . }}
-      <a class="btn tag-{{.}} m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
-        {{ .}}
-      </a>
-      <a class="btn tag-{{.}} m-2 d-md-inline-block d-sm-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+      <btn class="btn m-2">
         <i class="fas fa-tags"></i> {{ .}}
-      </a>
+      </btn>
       {{ end }} {{ end }}
     </div>
 

@@ -135,44 +135,6 @@ sup {
 		background-color: var(--color-font);
 		color: var(--color-background);
 	}
-
-
-	&.tag {
-
-		margin-top: 2px;
-		margin-bottom: 2px;
-		border: 2px solid;
-		border-color: var(--color-font);
-
-		&:hover {
-			background-color: var(--color-background);
-			color: var(--color-font);
-			border-color: var(--color-font);
-		}
-
-		background-color: var(--color-font);
-		color: $f333_dark;
-	}
-
-
-
-
-	&.category {
-
-		margin-top: 4px;
-		margin-bottom: 4px;
-		border: 4px solid;
-		border-color: var(--color-font);
-		color: var(--color-background);
-		background-color: var(--color-font);
-
-		&:hover {
-			background-color: var(--color-background);
-			color: var(--color-font);
-			border-color: var(--color-font);
-		}
-
-	}
 }
 
 .card {
@@ -324,7 +286,6 @@ div.webmention__content {
 a.reaction:hover {
 	border-bottom: none
 }
-
 
 .e-content {
 	&::first-letter {

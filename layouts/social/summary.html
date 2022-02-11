@@ -37,12 +37,12 @@
     <div class="container text-center">
       {{ with .Params.tags }}
       {{ range sort . }}
-      <a class="btn category m-2 d-md-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+      <btn class="btn m-2 d-md-none">
         {{ .}}
-      </a>
-      <a class="btn category m-2 d-md-inline-block d-sm-none " href='{{ "tags" | absURL }}/{{ . | urlize }}'>
+      </btn>
+      <btn class="btn m-2 d-md-inline-block d-sm-none">
         <i class="fa-duotone fa-map-pin"></i> {{ .}}
-      </a>
+      </btn>
       {{ end }}
       {{ end }}
     </div>

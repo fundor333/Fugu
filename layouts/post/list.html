@@ -34,6 +34,10 @@
 </div>
 <hr>
 
+<div class="e-content">
+  {{ .Content }}
+</div>
+
 {{ $paginator := .Paginate (where .Data.Pages "Section" .Section) }}
 {{ range $paginator.Pages }}
 
