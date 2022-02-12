@@ -135,6 +135,11 @@ sup {
 		background-color: var(--color-font);
 		color: var(--color-background);
 	}
+
+	&.active {
+		background-color: var(--color-font);
+		color: var(--color-background);
+	}
 }
 
 .card {
