@@ -22,8 +22,8 @@
     <a href="{{ .Permalink }}"
       class="p-summary d-flex align-items-center justify-content-center pt-3">{{ .Description }}</a>
     <div class="d-flex align-items-center justify-content-center">
-      <i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt
-        .ReadingTime  }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i
+      <i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 4 }}<i class="fa-duotone fa-mug-tea"></i>
+      {{ if gt .ReadingTime 6 }}<i class="fa-duotone fa-mug-tea"></i>{{ if gt .ReadingTime 10 }}<i
         class="fa-duotone fa-mug-tea"></i>{{ end }}{{ end }}
       {{ end }}
       Reading time {{.ReadingTime}} minutes
