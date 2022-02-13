@@ -5,7 +5,7 @@
   {{ .Content }}
 </div>
 
-{{ $paginator := .Paginate  (where .Site.Pages "Params.specialpost" "!=" true)   }}
+{{ $paginator := .Paginate  (where .Site.RegularPages ".Params.specialpost" "!=" true)   }}
 
 <div class="row row-cols-1 g-4 my-auto">
   {{ range $paginator.Pages }}
