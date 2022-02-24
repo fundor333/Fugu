@@ -38,17 +38,17 @@
 
     <div class="container text-center">
       {{ range .Params.categories }}
-      <btn class="btn m-2">
+      <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="btn m-2">
         <i class="fa-duotone fa-map-pin"></i> {{ .}}
-      </btn>
+      </a>
       {{ end }}
     </div>
 
     <div class="container text-center">
       {{ with .Params.tags }} {{ range sort . }}
-      <btn class="btn m-2">
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="btn m-2">
         <i class="fas fa-tags"></i> {{ .}}
-      </btn>
+      </a>
       {{ end }} {{ end }}
     </div>
 

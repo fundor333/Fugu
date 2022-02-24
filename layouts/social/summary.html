@@ -37,9 +37,9 @@
     <div class="container text-center">
       {{ with .Params.tags }}
       {{ range sort . }}
-      <btn class="btn m-2 d-md-none">
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="btn m-2 d-md-none">
         {{ .}}
-      </btn>
+      </a>
       <btn class="btn m-2 d-md-inline-block d-sm-none">
         <i class="fa-duotone fa-map-pin"></i> {{ .}}
       </btn>
