@@ -1,5 +1,6 @@
 @import "scss/bootstrap.scss";
 @import "_syntax";
+@import "_webmention";
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend&family=Syne+Mono&family=Vujahday+Script&display=swap');
 
@@ -212,85 +213,6 @@ sup {
 
 }
 
-#webmentions {
-	margin-bottom: 2rem;
-
-	.reacts {
-		img {
-			margin: 3px 0ex 1px 0;
-			height: 48px;
-			width: 48px;
-			border-radius: 15%;
-
-		}
-	}
-
-	ul {
-		padding: 0;
-		margin: 0;
-		list-style-type: none
-	}
-
-	h2 {
-		text-align: center;
-	}
-}
-
-.webmention li {
-	margin: 1rem 0
-}
-
-div.webmention {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	padding: 1rem 0 1rem 60px
-}
-
-div.webmention>a {
-	padding: 1rem 0 1rem 0
-}
-
-div.webmention__meta {
-	/*! display:flex; */
-	flex-wrap: wrap;
-	align-items: center;
-	order: -1;
-	font-size: .9rem
-}
-
-div.webmention__meta>a {
-	padding-right: .5rem
-}
-
-img.webmention__author__img {
-	position: absolute;
-	top: 1rem;
-	left: 0;
-	height: 48px;
-	width: 48px;
-	border-radius: 15%;
-	object-fit: cover
-}
-
-div.webmention__content {
-	font-size: .9rem
-}
-
-#webmentions .reacts {
-	max-width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap
-}
-
-.reacts>li {
-	margin: 0 auto
-}
-
-a.reaction:hover {
-	border-bottom: none
-}
 
 .e-content {
 	&::first-letter {

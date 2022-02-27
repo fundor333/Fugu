@@ -157,19 +157,18 @@ end }}
       <p class="text-center">
         or <a href="https://webmention.io/fundor333.com/webmention" class="a-post">webmention it</a>
       </p>
-      <a href="https://news.indieweb.org/en" class="u-syndication text-center">
-        Also posted on IndieNews
-      </a>
+      <p class="text-center">
+        <a href="https://news.indieweb.org/en" class="u-syndication text-center">
+          Also posted on IndieNews
+        </a>
+      </p>
     </article>
 
     <script id="s9-sdk" async defer content="330fd98586a04f91a3261ff6620cf1c7"
       src="//cdn.social9.com/js/socialshare.min.js"></script>
 
-    <div id="webmentions" class="row">
-      <a href="/quiet" class="quiet-link d-none d-md-block p-3">
-        <h2><i class="fa-solid fa-dice-d12"></i></h2>
-      </a>
-    </div>
+    {{- partial "webmention.html" . -}}
+
     <hr>
     {{ $related := .Site.RegularPages.Related . | first 3 }}
     {{ with $related }}
