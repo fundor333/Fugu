@@ -43,7 +43,7 @@
 {{ template  "_internal/google_news.html" . }}
 {{ template "_internal/schema.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
-{{ template "_internal/google_analytics.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
 
 {{ if .Site.Params.gtm_id}}{{- partial "gtm.html" . }}{{ end }}
 
