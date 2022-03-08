@@ -4,4 +4,7 @@
 
 {{ define "main"}}
 {{ .Render "summary" }}
+
+{{- partial "webmention.html" . -}}
+
 {{ end }}
