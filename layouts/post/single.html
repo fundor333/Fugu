@@ -1,43 +1,8 @@
 {{ define "more_head"}}
 
 {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}"}}
-<script type="application/ld+json">
-  [{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ .Site.BaseURL }}"
-    }, {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "{{ .Site.BaseURL }}post"
-    }, {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "{{ .Title }}",
-      "item": "{{ .Permalink }}"
-    }]
-  }, {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "{{ .Title }}",
-    "image": [
-      "{{ $image.Permalink }}"
-    ],
-    "datePublished": "{{ .Date  }}",
-    "dateModified": "{{ .Date }}",
-    "author": [{
-      "@type": "Person",
-      "name": "{{ .Site.Author.name }}",
-      "url": "{{ .Site.Author.url }}"
-    }]
-  }]
+{{ partial "seo_schema" . }}
 
-</script>
 
 {{ end }}
 
