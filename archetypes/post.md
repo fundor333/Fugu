@@ -6,9 +6,11 @@ feature_link: ""
 feature_text: "Photo by __ __ on Unsplash"
 tags:
 slug: "{{ .Name }}"
-categories: 
+categories:
 description: ""
 type: "post"
 meta:
+Focus_Keyword: ""
+Victor_Hugo: "true"
 ---
 
