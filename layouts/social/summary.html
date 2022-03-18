@@ -16,7 +16,7 @@
           {{ .Title }}
         </h1>
       </a>
-      <p>{{ .Date  | time.Format ":date_short" }} {{ .Date  | time.Format ":time_short" }}</p>
+      <p>{{ .Date | time.Format "2006-01-02 15:04:05" }}</p>
       {{ .Content | safeHTML }}
       {{ if .Param "mf-bookmark-of" }}
       {{ range  .Param "mf-bookmark-of"}}
