@@ -40,8 +40,11 @@
 		    {{ end }}
 		    "content_html": {{ $element.Content | jsonify }},
 		    "content_text": {{ $element.Plain | jsonify }},
-				"date_published": "{{ .Date }}",
-				"tags": ["{{ delimit .Params.tags "," }}"]		}
+		    		{{- if .Params.tags -}}
+				"tags": ["{{ delimit .Params.tags "," }}"]	,
+				{{ end }}
+				"date_published": "{{ .Date }}"
+				}
 		{{ end }}
 	]
 	{{ end }}
