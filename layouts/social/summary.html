@@ -8,8 +8,8 @@
         <h1 class="text-center p-name py-2">
           {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
           {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
-          {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i>
-          {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i>
+          {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Like
+          {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmark
           {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
           {{ else if .Param "mf-in-reply-to" }}<i class="fa-solid fa-reply"></i> Response
           {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
