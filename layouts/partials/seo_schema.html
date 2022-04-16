@@ -11,7 +11,11 @@
     "headline" : "{{ .Title }}",
     "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
     "inLanguage" : "en-US",
-    "author" : "{{ range .Site.Author }}{{ . }}{{ end }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ range .Site.Author }}{{ . }}{{ end }}",
+    "url": "{{ .Site.BaseURL }}"
+      },
     "creator" : "{{ range .Site.Author }}{{ . }}{{ end }}",
     "publisher": "{{ range .Site.Author }}{{ . }}{{ end }}",
     "accountablePerson" : "{{ range .Site.Author }}{{ . }}{{ end }}",
