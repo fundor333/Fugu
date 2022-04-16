@@ -16,28 +16,29 @@
           {{ .Title }}
         </h1>
       </a>
-            <div class="text-center"><time class="dt-published"
+      <div class="text-center"><time class="dt-published"
           datetime="{{ .Date | time.Format "2006-01-02 15:04:05"  }}"></time>{{ .Date | time.Format "2006-01-02 15:04:05"  }}
       </div>
       <article class="flex flex-col px-3 e-content">
-      {{ .Content | safeHTML }}
-            </article>
-
-      {{ if .Param "mf-bookmark-of" }}
-      {{ range  .Param "mf-bookmark-of"}}
-      <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-      {{ end }}
-      {{ end }}
-      {{ if .Param "mf-like-of" }}
-      {{ range  .Param "mf-like-of"}}
-      <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-      {{ end }}
-      {{ end }}
-      {{ if .Param "mf-in-reply-to" }}
-      {{ range  .Param "mf-in-reply-to"}}
-      <a class="u-in-reply-to h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
-      {{ end }}
-      {{ end }}
+        {{ .Content | safeHTML }}
+      </article>
+      <div class="col-10 offset-1 text-center">
+        {{ if .Param "mf-bookmark-of" }}
+        {{ range  .Param "mf-bookmark-of"}}
+        <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+        {{ end }}
+        {{ end }}
+        {{ if .Param "mf-like-of" }}
+        {{ range  .Param "mf-like-of"}}
+        <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+        {{ end }}
+        {{ end }}
+        {{ if .Param "mf-in-reply-to" }}
+        {{ range  .Param "mf-in-reply-to"}}
+        <a class="u-in-reply-to h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
+        {{ end }}
+        {{ end }}
+      </div>
     </div>
     <div class="container text-center">
       {{ with .Params.tags }}
