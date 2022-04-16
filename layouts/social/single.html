@@ -1,5 +1,6 @@
 {{ define "more_head"}}
 {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}"}}
+{{ partial "seo_schema" . }}
 {{ end }}
 
 {{ define "main"}}
