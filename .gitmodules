@@ -1,0 +1,3 @@
+[submodule "metadata-mod-hugo-dfd"]
+	path = metadata-mod-hugo-dfd
+	url = https://github.com/danielfdickinson/metadata-mod-hugo-dfd.git
