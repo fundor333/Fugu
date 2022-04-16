@@ -1,9 +1,9 @@
 <div class="col-start-2 col-span-10">
-  <article class="flex flex-col items-center text-center h-entry">
+  <article class="flex flex-col items-center h-entry">
     <a href="/quiet" class="quiet-link px-3">
       <h3><i class="fa-solid fa-dice-d12"></i></h3>
     </a>
-    <div class="container text-center">
+    <div class="container">
       <a class="u-url u-uid" href="{{ .Permalink }}">
         <h1 class="text-center p-name py-2">
           {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
@@ -16,8 +16,13 @@
           {{ .Title }}
         </h1>
       </a>
-      <p>{{ .Date | time.Format "2006-01-02 15:04:05" }}</p>
+            <div class="text-center"><time class="dt-published"
+          datetime="{{ .Date | time.Format "2006-01-02 15:04:05"  }}"></time>{{ .Date | time.Format "2006-01-02 15:04:05"  }}
+      </div>
+      <article class="flex flex-col px-3 e-content">
       {{ .Content | safeHTML }}
+            </article>
+
       {{ if .Param "mf-bookmark-of" }}
       {{ range  .Param "mf-bookmark-of"}}
       <a class="u-like-of h-cite" href="{{ . }}"> <i class="fad fa-bookmark"></i> Link</a>
