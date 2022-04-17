@@ -1,13 +1,13 @@
 {{ define "more_head"}}
 {{ $image := .Resources.GetMatch "{cover.jpg,cover.png,cover.jpeg}"}}
-{{ partial "seo_schema" . }}
+{{ partial "seo_schema_social" . }}
 {{ end }}
 
 {{ define "main"}}
 {{ .Render "summary" }}
     <div class="col-10 offset-1 text-center">
       <img loading="lazy" src="{{ .Site.Params.image}}" alt="logo" class="h-card img-fluid u-logo u-photo" width="60">
-      <p class="p-author h-card">by {{ .Site.Author.name }}</p>
+      <p class="p-author h-card">by <a rel="author" class="p-author h-card" href="{.Site.BaseURL }">{{ .Site.Author.name }}</a></p>
     </div>
 
 {{- partial "webmention.html" . -}}

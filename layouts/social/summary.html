@@ -1,21 +1,29 @@
 <div class="col-start-2 col-span-10">
   <article class="flex flex-col items-center h-entry">
-    <a href="/quiet" class="quiet-link px-3">
-      <h3><i class="fa-solid fa-dice-d12"></i></h3>
-    </a>
+
     <div class="container">
-      <a class="u-url u-uid" href="{{ .Permalink }}">
-        <h1 class="text-center p-name py-2">
-          {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
-          {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
-          {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Like
-          {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmark
-          {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
-          {{ else if .Param "mf-in-reply-to" }}<i class="fa-solid fa-reply"></i> Response
-          {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
-          {{ .Title }}
-        </h1>
-      </a>
+      <h1 class="text-center p-name">
+        <div class="row">
+          <div class="col-1 d-none d-md-block">
+            <a href="/news" class="quiet-link"> <i class="fa-solid fa-dice-d12"></i></a>
+          </div>
+          <div class="col">
+            <a class="u-url u-uid" href="{{ .Permalink }}">
+              {{ if .Param "mf-drank" }}<i class="fad fa-mug-tea"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
+              {{ else if .Param "mf-ate" }}<i class="fad fa-pizza"></i> {{ range  .Param "mf-summary"}}{{.}}{{ end }}
+              {{ else if .Param "mf-like-of" }}<i class="fad fa-heart-circle"></i> Like
+              {{ else if .Param "mf-bookmark-of" }}<i class="fad fa-bookmark"></i> Bookmark
+              {{ else if .Param "mf-repost-of" }}<i class="fad fa-retweet"></i> Repost
+              {{ else if .Param "mf-in-reply-to" }}<i class="fa-solid fa-reply"></i> Response
+              {{ else  }}<i class="fad fa-sticky-note"></i> Note{{ end }}
+              {{ .Title }}
+            </a>
+          </div>
+          <div class="col-1 d-none d-md-block">
+            <a href="/news" class="quiet-link"> <i class="fa-solid fa-dice-d12"></i></a>
+          </div>
+        </div>
+      </h1>
       <div class="text-center"><time class="dt-published"
           datetime="{{ .Date | time.Format "2006-01-02 15:04:05"  }}"></time>{{ .Date | time.Format "2006-01-02 15:04:05"  }}
       </div>
