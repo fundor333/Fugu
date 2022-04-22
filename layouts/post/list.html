@@ -25,14 +25,6 @@
   <a href="/news" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
 </h1>
 
-<div class="text-center">
-  {{range sort ($.Site.GetPage "taxonomyTerm" "tags").Pages "Title" }}
-  <a class="btn tag m-2" href='{{ .Permalink }}'>
-    <i class="fas fa-tags"></i> {{ .Title}}
-  </a>
-  {{ end }}
-</div>
-<hr>
 
 <div class="e-content">
   {{ .Content }}

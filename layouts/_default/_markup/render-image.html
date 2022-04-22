@@ -1,6 +1,10 @@
 {{ $src :=  .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 
-{{ if $src }}
+{{ $ext := path.Ext $src }}
+{{ if eq $ext ".gif" }}
+<img class="img-post u-photo" src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async"
+  width="{{ $src.Width }}" height="{{ $src.Height }}" />
+{{ else if $src }}
 <picture>
 
   <!-- AVIF -->

@@ -1,18 +1,40 @@
 {{ define "main" }}
 
+<script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL }}"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ .Permalink }}"
+    }]
+  }]
 
-<h2 class="text-center">
+</script>
+
+<h1 class="text-center">
   <a href="/news" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
-  {{ .Title}}
+  {{.Title}}
   <a href="/news" class="quiet-link px-3"> <i class="fa-solid fa-dice-d12"></i></a>
-</h2>
+</h1>
 
 
-{{ range .Pages }}
+<div class="e-content">
+  {{ .Content }}
+</div>
 
+{{ $paginator := .Paginate .Pages }}
+{{ range $paginator.Pages }}
 
 {{ .Render "summary" }}
-<br>
+
 {{ end }}
 <hr>
 {{ partial "paginator.html" . }}
