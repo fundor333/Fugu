@@ -10,7 +10,5 @@ categories:
 description: ""
 type: "post"
 meta:
-Focus_Keyword: ""
-Victor_Hugo: "true"
 ---
 
