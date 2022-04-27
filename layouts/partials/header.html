@@ -1,13 +1,14 @@
-<div>
+<di class="container-fluid">
   <br>
 
-  <div class="offset-3 offset-sm-5 row">
+  <div class="row text-center">
     <a class="u-url" rel=" me" href="{{ .Site.BaseURL }}">
-      <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}" class="img-fluid u-logo u-photo d-flex align-items-center justify-content-center" width="120">
+      <img loading="lazy" src="{{ .Site.Params.image}}" alt="{{ .Site.Title }}" class="h-card img-fluid u-logo u-photo"
+        width="120">
     </a>
   </div>
 
-  <div class="offset-3 offset-sm-5 row d-flex align-items-center justify-content-center">
+  <div class="row text-center">
     <a class="u-url" rel="me" href="{{ .Site.BaseURL }}">
       <h1 class="p-name align-items-center justify-content-center">
         <nobr>{{ .Site.Title }}</nobr>
@@ -15,17 +16,17 @@
     </a>
   </div>
 
-  <div class="offset-2 offset-sm-4 row d-flex align-items-center justify-content-center">
+  <div class="row text-center">
     <p class="align-middle">{{ .Site.Params.description }}</p>
   </div>
-  <div class="offset-4 row d-flex align-items-center justify-content-center">
+  <div class="row text-center d-flex align-items-center justify-content-center">
     <div>
-      <button class="btn light offset-1 col-4" style="display:none" onclick="changeThemeToLight()">
+      <button class="btn light col-4" style="display:none" onclick="changeThemeToLight()">
         <div class="fa-theme">
           <i class="fa-duotone fa-starfighter"></i>
         </div>
       </button>
-      <button class="btn dark offset-1 col-4" style="display:none" onclick="changeThemeToDark()">
+      <button class="btn dark col-4" style="display:none" onclick="changeThemeToDark()">
         <div class="fa-theme">
           <i class="fa-duotone fa-starfighter-twin-ion-engine-advanced"></i>
         </div>
@@ -35,57 +36,57 @@
 
   {{- partial "authentication.html" . -}}
 
-</div>
+  </div>
 
-<script>
-  const changeThemeToDark = () => {
-    localStorage.setItem("theme", "dark");
-    document.documentElement.className = "theme-dark";
-    $(".dark").hide();
-    $(".light").show();
-  }
-
-  const changeThemeToLight = () => {
-    localStorage.setItem("theme", "light");
-    document.documentElement.className = "theme-light";
-    $(".dark").show();
-    $(".light").hide();
-  }
-
-  function applyTheme(theme) {
-    if (theme === "light") {
-      changeThemeToLight()
-    } else if (theme === "dark") {
-      changeThemeToDark()
-    } else {
-      changeThemeToDark()
+  <script>
+    const changeThemeToDark = () => {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.className = "theme-dark";
+      $(".dark").hide();
+      $(".light").show();
     }
-  }
 
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme == "dark") {
-    changeThemeToDark();
-  } else if (currentTheme == "light") {
-    changeThemeToLight();
-  }
+    const changeThemeToLight = () => {
+      localStorage.setItem("theme", "light");
+      document.documentElement.className = "theme-light";
+      $(".dark").show();
+      $(".light").hide();
+    }
 
-  $(window).on("load", function () {
-    const currentTheme = localStorage.getItem("theme") || "dark";
+    function applyTheme(theme) {
+      if (theme === "light") {
+        changeThemeToLight()
+      } else if (theme === "dark") {
+        changeThemeToDark()
+      } else {
+        changeThemeToDark()
+      }
+    }
 
-    applyTheme(currentTheme);
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme == "dark") {
+      changeThemeToDark();
+    } else if (currentTheme == "light") {
+      changeThemeToLight();
+    }
 
-    document.querySelector("#theme").addEventListener("change", function () {
-      localStorage.setItem("theme", this.value);
-      applyTheme(this.value);
+    $(window).on("load", function () {
+      const currentTheme = localStorage.getItem("theme") || "dark";
+
+      applyTheme(currentTheme);
+
+      document.querySelector("#theme").addEventListener("change", function () {
+        localStorage.setItem("theme", this.value);
+        applyTheme(this.value);
+      });
+
+      for (const optionElement of document.querySelectorAll("#theme option")) {
+        optionElement.selected = currentTheme === optionElement.value;
+      }
+
     });
 
-    for (const optionElement of document.querySelectorAll("#theme option")) {
-      optionElement.selected = currentTheme === optionElement.value;
-    }
-
-  });
-
-</script>
+  </script>
 
 
-<script src="https://cdn.jsdelivr.net/gh/virae/we-stand-with-ukraine@v1.0.2/badge.js" async></script>
+  <script src="https://cdn.jsdelivr.net/gh/virae/we-stand-with-ukraine@v1.0.2/badge.js" async></script>
